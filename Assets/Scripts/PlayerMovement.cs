@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     private Vector2 lastMovement;
     [SerializeField] private float speed;
+    public GameObject coinPrefab;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,5 +34,14 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("lastMoveY", lastMovement.y);
 
         rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * movement.normalized);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        }
     }
 }
