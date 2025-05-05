@@ -52,7 +52,8 @@ public class EnemyBehavior : MonoBehaviour
         Vector2 direction = (player.position - transform.position).normalized;
         int layerMask = ~LayerMask.GetMask("Enemy");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, layerMask);
-
+        if (attackSound != null && audioSource != null)
+            audioSource.PlayOneShot(attackSound);
         if (hit.collider != null)
         {
             Debug.Log("Raycast acertou: " + hit.collider.name);
@@ -60,8 +61,6 @@ public class EnemyBehavior : MonoBehaviour
             {
                 hit.collider.GetComponent<Health>().TomarDano((int)danoMelee);
 
-                if (attackSound != null && audioSource != null)
-                    audioSource.PlayOneShot(attackSound);
             }
         }
         else
