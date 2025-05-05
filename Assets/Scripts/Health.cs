@@ -20,5 +20,6 @@ public class Health : MonoBehaviour
     public void TomarDano(float dano) {
         healthPoints -= dano;
         HandleMudarSlider(healthPoints);
+        slider.value = healthPoints;
     }
 }

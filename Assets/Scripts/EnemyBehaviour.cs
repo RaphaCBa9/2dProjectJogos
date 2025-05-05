@@ -6,6 +6,7 @@ public class EnemyBehavior : MonoBehaviour
     public float attackRange = 1.5f;
     public float attackCooldown = 2f;
     public int maxHealth = 3;
+    public float danoMelee = 5f;
 
     private int currentHealth;
     private Transform player;
@@ -47,10 +48,14 @@ public class EnemyBehavior : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log("Raycast acertou: " + hit.collider.name);
+            if (hit.collider.name == "Player") {
+                hit.collider.GetComponent<Health>().TomarDano(5);
+            }
+            
         }
         else
         {
-            Debug.Log("Raycast não acertou nada");
+            Debug.Log("Raycast nï¿½o acertou nada");
         }
     }
 
