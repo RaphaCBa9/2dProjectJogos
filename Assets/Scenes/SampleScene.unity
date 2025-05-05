@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a6f496abbffe4468be146a6de8a2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealthPoints: 100
   healthPoints: 100
   healthTxt: {fileID: 408648116}
   slider: {fileID: 1066686731}
@@ -5658,6 +5659,33 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2110503361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3183159857454905002, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
+  m_PrefabInstance: {fileID: 6675664986267322594}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2110503367
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110503361}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b2e4f60f207c974fa2bc36e349b0d31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &6675664986267322594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5709,6 +5737,10 @@ PrefabInstance:
     - target: {fileID: 3183159857454905002, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_Name
       value: EnemyGoblin1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5971089178778915339, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
+      propertyPath: m_Mass
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 5971089178778915339, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_BodyType
