@@ -31,7 +31,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBehaviour.cs",
               "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\EnemyBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyBehaviour.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAkwEQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T14:28:24.855Z",
               "EditorCaption": ""
@@ -46,7 +46,8 @@
               "RelativeToolTip": "..\\..\\gitprojeto\\NaMiraDoLeao\\Assets\\Scripts\\game\\EnemyBehaviour.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T14:22:40.86Z"
+              "WhenOpened": "2025-05-05T14:22:40.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -58,7 +59,8 @@
               "RelativeToolTip": "Assets\\Scripts\\MenuScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T14:07:33.495Z"
+              "WhenOpened": "2025-05-05T14:07:33.495Z",
+              "EditorCaption": ""
             }
           ]
         }

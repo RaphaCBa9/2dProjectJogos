@@ -12,6 +12,10 @@ public class EnemyBehavior : MonoBehaviour
     private int currentHealth;
     private Transform player;
     private float lastAttackTime;
+    private AudioSource audioSource;
+
+    private AudioClip attackSound;
+    private AudioClip deathSound;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -25,6 +29,10 @@ public class EnemyBehavior : MonoBehaviour
         currentSpeed = maxSpeed;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+
+        attackSound = Resources.Load<AudioClip>("Sounds/goblinAttack");
+        deathSound = Resources.Load<AudioClip>("Sounds/goblinDeath");
     }
 
     void Update()
@@ -61,18 +69,18 @@ public class EnemyBehavior : MonoBehaviour
         Vector2 direction = (player.position - transform.position).normalized;
         int layerMask = ~LayerMask.GetMask("Enemy");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, layerMask);
-
+        if (attackSound != null && audioSource != null)
+            audioSource.PlayOneShot(attackSound);
         if (hit.collider != null)
         {
             Debug.Log("Raycast acertou: " + hit.collider.name);
             if (hit.collider.name == "Player") {
                 hit.collider.GetComponent<Health>().TomarDano(meleeDamage);
             }
-            
         }
         else
         {
-            Debug.Log("Raycast n�o acertou nada");
+            Debug.Log("Raycast não acertou nada");
         }
     }
 
@@ -93,6 +101,11 @@ public class EnemyBehavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Inimigo morreu!");
-        Destroy(gameObject);
+
+        // Toca som de morte
+        if (deathSound != null && audioSource != null)
+            audioSource.PlayOneShot(deathSound);
+
+        Destroy(gameObject, 0.5f);
     }
 }
