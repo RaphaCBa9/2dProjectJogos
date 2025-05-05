@@ -4,13 +4,14 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+    public float maxHealthPoints = 100f;
     public float healthPoints;
     [SerializeField] private TMP_Text healthTxt;
     [SerializeField] private Slider slider;
     
     void Start()
     {
-        healthPoints = 100;
+        healthPoints = maxHealthPoints;
     }
 
     public void HandleMudarSlider(float valor) {
