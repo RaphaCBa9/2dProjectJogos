@@ -11,11 +11,19 @@ public class EnemyBehavior : MonoBehaviour
     private int currentHealth;
     private Transform player;
     private float lastAttackTime;
+    private AudioSource audioSource;
+
+    private AudioClip attackSound;
+    private AudioClip deathSound;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         currentHealth = maxHealth;
+        audioSource = GetComponent<AudioSource>();
+
+        attackSound = Resources.Load<AudioClip>("Sounds/goblinAttack");
+        deathSound = Resources.Load<AudioClip>("Sounds/goblinDeath");
     }
 
     void Update()
@@ -48,17 +56,19 @@ public class EnemyBehavior : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log("Raycast acertou: " + hit.collider.name);
-            if (hit.collider.name == "Player") {
-                hit.collider.GetComponent<Health>().TomarDano(5);
+            if (hit.collider.name == "Player")
+            {
+                hit.collider.GetComponent<Health>().TomarDano((int)danoMelee);
+
+                if (attackSound != null && audioSource != null)
+                    audioSource.PlayOneShot(attackSound);
             }
-            
         }
         else
         {
-            Debug.Log("Raycast n�o acertou nada");
+            Debug.Log("Raycast não acertou nada");
         }
     }
-
 
     public void TakeDamage(int amount)
     {
@@ -72,6 +82,11 @@ public class EnemyBehavior : MonoBehaviour
     void Die()
     {
         Debug.Log("Inimigo morreu!");
-        Destroy(gameObject);
+
+        // Toca som de morte
+        if (deathSound != null && audioSource != null)
+            audioSource.PlayOneShot(deathSound);
+
+        Destroy(gameObject, 0.5f);
     }
 }
