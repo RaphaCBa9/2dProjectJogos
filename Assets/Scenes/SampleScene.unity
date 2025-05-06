@@ -5856,11 +5856,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8025255348775488517, guid: 6d7941549c820ec4d9827dbd15d8b135, type: 3}
       propertyPath: attackRange
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8025255348775488517, guid: 6d7941549c820ec4d9827dbd15d8b135, type: 3}
       propertyPath: meleeDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025255348775488517, guid: 6d7941549c820ec4d9827dbd15d8b135, type: 3}
+      propertyPath: attackCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8375414693807399124, guid: 6d7941549c820ec4d9827dbd15d8b135, type: 3}
       propertyPath: m_PlayOnAwake
