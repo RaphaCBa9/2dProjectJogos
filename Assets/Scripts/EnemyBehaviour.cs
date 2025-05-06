@@ -110,6 +110,7 @@ public class EnemyBehavior : MonoBehaviour
         anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
         isAttacking = false;
+        Debug.Log("Passou aqui");
     }
 
     public void TakeDamage(int amount)

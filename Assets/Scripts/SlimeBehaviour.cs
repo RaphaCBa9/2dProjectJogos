@@ -12,6 +12,11 @@ public class SlimeBehavior : EnemyBase
         deathSound = Resources.Load<AudioClip>("Sounds/slimeDeath");
     }
 
+    protected override float GetAttackDelay()
+    {
+        return 0.8f;
+    }
+
     protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -38,5 +43,10 @@ public class SlimeBehavior : EnemyBase
             audioSource.PlayOneShot(deathSound);
 
         base.Die();
+    }
+
+    public void EndAttackAnimation()
+    {
+        base.EndAttackAnimation();
     }
 }

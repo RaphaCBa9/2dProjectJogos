@@ -8,25 +8,24 @@ public abstract class EnemyBase : MonoBehaviour
     public int maxHealth = 3;
     public float meleeDamage = 5f;
 
-    protected Transform player;
     protected float currentSpeed;
     protected int currentHealth;
+    protected Transform player;
     protected float lastAttackTime;
-    protected bool isAttacking = false;
+    protected AudioSource audioSource;
 
     protected Rigidbody2D rb;
     protected Animator anim;
-    protected AudioSource audioSource;
-
     protected Vector2 lockedAttackDirection;
     protected Vector2 lockedAnimDirection;
+
+    protected bool isAttacking = false;
 
     protected virtual void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        currentSpeed = maxSpeed;
         currentHealth = maxHealth;
-
+        currentSpeed = maxSpeed;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
@@ -66,30 +65,34 @@ public abstract class EnemyBase : MonoBehaviour
                 anim.SetBool("attack", true);
                 currentSpeed = 0f;
 
+                StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
                 lastAttackTime = Time.time;
-                StartCoroutine(PerformDelayedAttack(0.5f));
             }
         }
     }
-
-    protected abstract System.Collections.IEnumerator PerformDelayedAttack(float delay);
 
     public virtual void EndAttackAnimation()
     {
         anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
         isAttacking = false;
+        Debug.Log("EndAttackAnimation chamado");
     }
 
-    public virtual void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         currentHealth -= amount;
         if (currentHealth <= 0)
+        {
             Die();
+        }
     }
 
     protected virtual void Die()
     {
         Destroy(gameObject, 0.5f);
     }
+
+    protected abstract float GetAttackDelay();
+    protected abstract System.Collections.IEnumerator PerformDelayedAttack(float delay);
 }
