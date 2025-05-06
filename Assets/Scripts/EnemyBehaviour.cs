@@ -22,6 +22,11 @@ public class EnemyBehavior : MonoBehaviour
     private Vector2 direction;
     private Vector2 lastMovement;
 
+    private bool isAttacking = false;
+    private Vector2 lockedAttackDirection;
+    private Vector2 lockedAnimDirection;
+
+
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
@@ -43,38 +48,54 @@ public class EnemyBehavior : MonoBehaviour
 
         if (distance > attackRange)
         {
+            isAttacking = false;
             Vector2 direction = (player.position - transform.position).normalized;
-            transform.position += (Vector3) (currentSpeed * Time.deltaTime * direction);
+            transform.position += (Vector3)(currentSpeed * Time.deltaTime * direction);
 
-            anim.SetFloat("moveX", direction.x);
-            anim.SetFloat("moveY", direction.y);
-            anim.SetFloat("moveMagnitude", direction.magnitude);
-            // anim.SetFloat("lastMoveX", lastMovement.x);
-            // anim.SetFloat("lastMoveY", lastMovement.y);
+            if (!anim.GetBool("attack"))
+            {
+                anim.SetFloat("moveX", direction.x);
+                anim.SetFloat("moveY", direction.y);
+                anim.SetFloat("moveMagnitude", direction.magnitude);
+            }
         }
         else
         {
-            if (Time.time - lastAttackTime >= attackCooldown)
+            if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
             {
-                Attack();
+                isAttacking = true;
+                lockedAttackDirection = (player.position - transform.position).normalized;
+                lockedAnimDirection = lockedAttackDirection;
+
+                anim.SetFloat("moveX", lockedAnimDirection.x);
+                anim.SetFloat("moveY", lockedAnimDirection.y);
+                anim.SetFloat("moveMagnitude", lockedAnimDirection.magnitude);
+
+                anim.SetBool("attack", true);
+                currentSpeed = 0f;
+
+                StartCoroutine(PerformDelayedAttack(0.5f));
                 lastAttackTime = Time.time;
             }
         }
     }
 
-    void Attack()
+
+    System.Collections.IEnumerator PerformDelayedAttack(float delay)
     {
-        currentSpeed = 0f;
-        anim.SetBool("attack", true);
-        Vector2 direction = (player.position - transform.position).normalized;
+        yield return new WaitForSeconds(delay);
+
         int layerMask = ~LayerMask.GetMask("Enemy");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, attackRange, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, lockedAttackDirection, attackRange, layerMask);
+
         if (attackSound != null && audioSource != null)
             audioSource.PlayOneShot(attackSound);
+
         if (hit.collider != null)
         {
             Debug.Log("Raycast acertou: " + hit.collider.name);
-            if (hit.collider.name == "Player") {
+            if (hit.collider.CompareTag("Player"))
+            {
                 hit.collider.GetComponent<Health>().TomarDano(meleeDamage);
             }
         }
@@ -84,9 +105,11 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    public void EndAttackAnimation() {
+    public void EndAttackAnimation()
+    {
         anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
+        isAttacking = false;
     }
 
     public void TakeDamage(int amount)
@@ -102,7 +125,6 @@ public class EnemyBehavior : MonoBehaviour
     {
         Debug.Log("Inimigo morreu!");
 
-        // Toca som de morte
         if (deathSound != null && audioSource != null)
             audioSource.PlayOneShot(deathSound);
 
