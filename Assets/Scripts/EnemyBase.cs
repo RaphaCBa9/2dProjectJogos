@@ -82,6 +82,7 @@ public abstract class EnemyBase : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        anim.SetTrigger("takeDamage");
         if (currentHealth <= 0)
         {
             Die();
