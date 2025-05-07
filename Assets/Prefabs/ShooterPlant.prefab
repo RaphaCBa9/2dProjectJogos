@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7838898747895331791}
   - component: {fileID: 8418886308980348812}
-  - component: {fileID: 982954998545984100}
   - component: {fileID: 2714219075746362576}
   - component: {fileID: 4627826617315135907}
   - component: {fileID: 8380533425033940242}
   - component: {fileID: 712164345078227620}
   - component: {fileID: 4852412008604055910}
+  - component: {fileID: 6727033585305037135}
   m_Layer: 8
   m_Name: ShooterPlant
   m_TagString: Untagged
@@ -93,26 +93,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &982954998545984100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2106948033143735155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bd2b9254e3e6d74ba4c34c730fb8dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 2
-  attackRange: 1.5
-  attackCooldown: 2
-  maxHealth: 3
-  meleeDamage: 5
-  projectilePrefab: {fileID: 0}
-  shootSpeed: 10
-  retreatRange: 2
 --- !u!60 &2714219075746362576
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -415,3 +395,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6727033585305037135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106948033143735155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd2b9254e3e6d74ba4c34c730fb8dd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
+  attackRange: 1.5
+  attackCooldown: 2
+  maxHealth: 3
+  meleeDamage: 5
+  projectilePrefab: {fileID: 3793187744034154460, guid: f1b81ca3df3348241a7171fbd4da1dff, type: 3}
+  shootSpeed: 10
+  retreatRange: 6

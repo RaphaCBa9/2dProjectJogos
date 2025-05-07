@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 338298220777837290}
   - component: {fileID: 7523525496305637588}
   - component: {fileID: 5971089178778915339}
-  - component: {fileID: 6987511875904829236}
   - component: {fileID: 837979435450259572}
+  - component: {fileID: 5491025073312310026}
   m_Layer: 8
   m_Name: EnemyGoblin1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,23 +173,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6987511875904829236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3183159857454905002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a60b7965c98c004790fa1e958376085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 2
-  attackRange: 1.5
-  attackCooldown: 2
-  maxHealth: 3
-  meleeDamage: 5
 --- !u!95 &837979435450259572
 Animator:
   serializedVersion: 7
@@ -212,3 +195,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5491025073312310026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183159857454905002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e856658fd9cdd146ac780afa23a94fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 2
+  attackRange: 1.5
+  attackCooldown: 2
+  maxHealth: 3
+  meleeDamage: 5

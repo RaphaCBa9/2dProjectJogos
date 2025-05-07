@@ -44,7 +44,7 @@ public class SlimeBehavior : EnemyBase
         base.Die();
     }
 
-    public void EndAttackAnimation()
+    new public void EndAttackAnimation()
     {
         base.EndAttackAnimation();
     }

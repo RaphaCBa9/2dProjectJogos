@@ -9,4 +9,9 @@ public class MenuScript : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(1);
     }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 }

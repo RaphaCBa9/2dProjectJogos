@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public float healthPoints;
     [SerializeField] private TMP_Text healthTxt;
     [SerializeField] private Slider slider;
+    [SerializeField] private GameObject gameOverPanel; 
     
     void Start()
     {
@@ -20,6 +21,11 @@ public class Health : MonoBehaviour
 
     public void TomarDano(float dano) {
         healthPoints -= dano;
+
+        if (healthPoints <= 0) {
+            gameOverPanel.SetActive(true);
+        }
+
         HandleMudarSlider(healthPoints);
         slider.value = healthPoints;
     }

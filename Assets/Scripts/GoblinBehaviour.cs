@@ -41,7 +41,7 @@ public class GoblinBehavior : EnemyBase
         base.Die();
     }
 
-    public void EndAttackAnimation()
+    new public void EndAttackAnimation()
     {
         base.EndAttackAnimation();
     }
