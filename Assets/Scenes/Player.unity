@@ -928,6 +928,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2411610300216763902, guid: d57eb8de5c136db46a295546bf1118cb, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3605764178983900906, guid: d57eb8de5c136db46a295546bf1118cb, type: 3}
       propertyPath: slider
       value: 
