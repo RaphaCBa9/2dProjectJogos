@@ -76,7 +76,6 @@ public abstract class EnemyBase : MonoBehaviour
         anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
         isAttacking = false;
-        Debug.Log("EndAttackAnimation chamado");
     }
 
     public void TakeDamage(int amount)
