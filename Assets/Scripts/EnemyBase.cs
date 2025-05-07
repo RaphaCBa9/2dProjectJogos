@@ -43,7 +43,7 @@ public abstract class EnemyBase : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized;
             transform.position += (Vector3)(currentSpeed * Time.deltaTime * direction);
 
-            if (!anim.GetBool("attack"))
+            if (!isAttacking)
             {
                 anim.SetFloat("moveX", direction.x);
                 anim.SetFloat("moveY", direction.y);
@@ -62,7 +62,7 @@ public abstract class EnemyBase : MonoBehaviour
                 anim.SetFloat("moveY", lockedAnimDirection.y);
                 anim.SetFloat("moveMagnitude", lockedAnimDirection.magnitude);
 
-                anim.SetBool("attack", true);
+                anim.SetTrigger("attack");
                 currentSpeed = 0f;
 
                 StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
@@ -73,7 +73,6 @@ public abstract class EnemyBase : MonoBehaviour
 
     public virtual void EndAttackAnimation()
     {
-        anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
         isAttacking = false;
     }

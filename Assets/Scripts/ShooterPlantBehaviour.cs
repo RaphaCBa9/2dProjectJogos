@@ -46,7 +46,7 @@ public class ShooterPlantBehaviour : EnemyBase
 
             anim.SetFloat("moveX", lockedAnimDirection.x);
             anim.SetFloat("moveY", lockedAnimDirection.y);
-            anim.SetBool("attack", true);
+            anim.SetTrigger("attack");
             currentSpeed = 0f;
 
             StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
@@ -56,7 +56,7 @@ public class ShooterPlantBehaviour : EnemyBase
 
     protected override float GetAttackDelay()
     {
-        return 0.3f; // pequeno atraso antes de atirar, pode ajustar
+        return 0.8f; // pequeno atraso antes de atirar, pode ajustar
     }
 
     protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
