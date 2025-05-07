@@ -29,7 +29,6 @@ public class GoblinBehavior : EnemyBase
 
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
-            Debug.Log("Goblin acertou o jogador!");
             hit.collider.GetComponent<Health>().TomarDano(meleeDamage);
         }
     }

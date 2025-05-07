@@ -31,7 +31,6 @@ public class SlimeBehavior : EnemyBase
         {
             if (hit.CompareTag("Player"))
             {
-                Debug.Log("Slime atingiu o jogador!");
                 hit.GetComponent<Health>().TomarDano(meleeDamage);
             }
         }
