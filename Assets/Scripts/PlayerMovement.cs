@@ -16,6 +16,11 @@ public class PlayerMovement : MonoBehaviour
     private float lastMeleeAtack;
     private float meleeAttackCooldown = 0.5f;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

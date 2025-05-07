@@ -127,13 +127,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 338298220777837290, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.9399996
+      value: 3.0599995
       objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -188,13 +184,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 338298220777837290, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.94
+      value: 3.06
       objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -249,13 +241,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 338298220777837290, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.96
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -413,13 +401,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 338298220777837290, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.96
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 1149352869129877084, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
       propertyPath: m_LocalPosition.y
