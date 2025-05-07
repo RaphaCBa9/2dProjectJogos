@@ -38,6 +38,12 @@ public abstract class EnemyBase : MonoBehaviour
         if (player == null) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
+        if (isDead == true)
+        {
+            anim.SetFloat("moveX", 0f);
+            anim.SetFloat("moveY", 0f);
+            anim.SetFloat("moveMagnitude", 0f);
+        }
 
         if (distance > attackRange)
         {
@@ -100,17 +106,34 @@ public abstract class EnemyBase : MonoBehaviour
     }
 
 
-    protected virtual void Die()
-    {
-        if (isDead) return;
+protected virtual void Die()
+{
+    if (isDead) return;
 
-        isDead = true;
-        anim.SetFloat("moveX", 0f);
-        anim.SetFloat("moveY", 0f);
-        anim.SetFloat("moveMagnitude", 0f);
-        anim.SetBool("isDead", true);
-        Destroy(gameObject, 1f);
+    isDead = true;
+
+    anim.SetFloat("moveX", 0f);
+    anim.SetFloat("moveY", 0f);
+    anim.SetFloat("moveMagnitude", 0f);
+    anim.SetBool("isDead", true);
+
+    // Desabilita colisores
+    Collider2D[] colliders = GetComponents<Collider2D>();
+    foreach (var col in colliders)
+    {
+        col.enabled = false;
     }
+
+    // Congela física
+    if (rb != null)
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    Destroy(gameObject, 1f); // Destroi após 1 segundo (animação de morte)
+}
+
 
 
     protected abstract float GetAttackDelay();
