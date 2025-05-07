@@ -46,15 +46,12 @@ public class ShooterPlantBehaviour : EnemyBase
 
             anim.SetTrigger("attack");
             currentSpeed = 0f;
-
-            StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
             lastAttackTime = Time.time;
         }
     }
-
     protected override float GetAttackDelay()
     {
-        return 0.8f;
+        return 0f;
     }
 
     protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
@@ -78,8 +75,6 @@ public class ShooterPlantBehaviour : EnemyBase
                 rb.linearVelocity = lockedAttackDirection * shootSpeed;
             }
         }
-
-        EndAttackAnimation();
     }
 
     public void EndAttackAnimation()

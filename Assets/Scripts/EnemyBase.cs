@@ -74,11 +74,14 @@ public abstract class EnemyBase : MonoBehaviour
 
                 anim.SetTrigger("attack");
                 currentSpeed = 0f;
-
-                StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
                 lastAttackTime = Time.time;
             }
         }
+    }
+
+    public void AttackCaller()
+    {
+        StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
     }
 
     public virtual void EndAttackAnimation()

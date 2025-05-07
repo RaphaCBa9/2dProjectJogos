@@ -14,7 +14,7 @@ public class SlimeBehavior : EnemyBase
 
     protected override float GetAttackDelay()
     {
-        return 0.8f;
+        return 0f;
     }
 
     protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)

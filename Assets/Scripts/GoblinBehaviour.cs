@@ -14,7 +14,7 @@ public class GoblinBehavior : EnemyBase
 
     protected override float GetAttackDelay()
     {
-        return 0.5f;
+        return 0f;
     }
 
     protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
