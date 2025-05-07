@@ -108,7 +108,9 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Coin"))
         {
             Destroy(other.gameObject);
-            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+            maxSpeed += 1f;
+            speed = maxSpeed;
+            // Instantiate(coinPrefab, transform.position, Quaternion.identity);
         }
     }
 }
