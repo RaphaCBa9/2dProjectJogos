@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyBehavior : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
     public float maxSpeed = 2f;
     public float attackRange = 1.5f;
@@ -8,26 +8,20 @@ public class EnemyBehavior : MonoBehaviour
     public int maxHealth = 3;
     public float meleeDamage = 5f;
 
-    private float currentSpeed;
-    private int currentHealth;
-    private Transform player;
-    private float lastAttackTime;
-    private AudioSource audioSource;
+    protected float currentSpeed;
+    protected int currentHealth;
+    protected Transform player;
+    protected float lastAttackTime;
+    protected AudioSource audioSource;
 
-    private AudioClip attackSound;
-    private AudioClip deathSound;
+    protected Rigidbody2D rb;
+    protected Animator anim;
+    protected Vector2 lockedAttackDirection;
+    protected Vector2 lockedAnimDirection;
 
-    private Rigidbody2D rb;
-    private Animator anim;
-    private Vector2 direction;
-    private Vector2 lastMovement;
+    protected bool isAttacking = false;
 
-    private bool isAttacking = false;
-    private Vector2 lockedAttackDirection;
-    private Vector2 lockedAnimDirection;
-
-
-    void Start()
+    protected virtual void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
         currentHealth = maxHealth;
@@ -35,12 +29,9 @@ public class EnemyBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-
-        attackSound = Resources.Load<AudioClip>("Sounds/goblinAttack");
-        deathSound = Resources.Load<AudioClip>("Sounds/goblinDeath");
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (player == null) return;
 
@@ -74,61 +65,36 @@ public class EnemyBehavior : MonoBehaviour
                 anim.SetBool("attack", true);
                 currentSpeed = 0f;
 
-                StartCoroutine(PerformDelayedAttack(0.5f));
+                StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
                 lastAttackTime = Time.time;
             }
         }
     }
 
-
-    System.Collections.IEnumerator PerformDelayedAttack(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        int layerMask = ~LayerMask.GetMask("Enemy");
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, lockedAttackDirection, attackRange, layerMask);
-
-        if (attackSound != null && audioSource != null)
-            audioSource.PlayOneShot(attackSound);
-
-        if (hit.collider != null)
-        {
-            Debug.Log("Raycast acertou: " + hit.collider.name);
-            if (hit.collider.CompareTag("Player"))
-            {
-                hit.collider.GetComponent<Health>().TomarDano(meleeDamage);
-            }
-        }
-        else
-        {
-            Debug.Log("Raycast não acertou nada");
-        }
-    }
-
-    public void EndAttackAnimation()
+    public virtual void EndAttackAnimation()
     {
         anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
         isAttacking = false;
-        Debug.Log("Passou aqui");
+        Debug.Log("EndAttackAnimation chamado");
     }
 
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        anim.SetTrigger("takeDamage");
         if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    void Die()
+    protected virtual void Die()
     {
-        Debug.Log("Inimigo morreu!");
-
-        if (deathSound != null && audioSource != null)
-            audioSource.PlayOneShot(deathSound);
-
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 1f);
+        anim.SetBool("isDead", true);
     }
+
+    protected abstract float GetAttackDelay();
+    protected abstract System.Collections.IEnumerator PerformDelayedAttack(float delay);
 }
