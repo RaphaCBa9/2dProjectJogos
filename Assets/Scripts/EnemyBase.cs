@@ -20,6 +20,8 @@ public abstract class EnemyBase : MonoBehaviour
     protected Vector2 lockedAnimDirection;
 
     protected bool isAttacking = false;
+    protected bool isDead = false;
+
 
     protected virtual void Start()
     {
@@ -62,6 +64,8 @@ public abstract class EnemyBase : MonoBehaviour
                 anim.SetFloat("moveY", lockedAnimDirection.y);
                 anim.SetFloat("moveMagnitude", lockedAnimDirection.magnitude);
 
+
+
                 anim.SetTrigger("attack");
                 currentSpeed = 0f;
 
@@ -80,18 +84,34 @@ public abstract class EnemyBase : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+
+        // Interrompe a animação de ataque, se estiver em execução
+        anim.ResetTrigger("attack");
+        isAttacking = false;
+        currentSpeed = maxSpeed;
+
+        // Toca a animação de dano imediatamente
         anim.SetTrigger("takeDamage");
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
 
+
     protected virtual void Die()
     {
-        Destroy(gameObject, 1f);
+        if (isDead) return;
+
+        isDead = true;
+        anim.SetFloat("moveX", 0f);
+        anim.SetFloat("moveY", 0f);
+        anim.SetFloat("moveMagnitude", 0f);
         anim.SetBool("isDead", true);
+        Destroy(gameObject, 1f);
     }
+
 
     protected abstract float GetAttackDelay();
     protected abstract System.Collections.IEnumerator PerformDelayedAttack(float delay);
