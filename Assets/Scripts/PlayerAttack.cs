@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy")) {
-            EnemyBehavior e = collision.gameObject.GetComponent<EnemyBehavior>();
+            EnemyBase e = collision.gameObject.GetComponent<EnemyBase>();
             e.TakeDamage(meleeDamage);
         }
     }
