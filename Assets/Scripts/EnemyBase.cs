@@ -80,9 +80,13 @@ public abstract class EnemyBase : MonoBehaviour
     }
 
     public void AttackCaller()
-    {
+    {   
+        if (isAttacking) return;
+        isAttacking=true;
+        Debug.Log($"AttackCaller chamado por {gameObject.name} em {Time.time}");
         StartCoroutine(PerformDelayedAttack());
     }
+
 
     public virtual void EndAttackAnimation()
     {
