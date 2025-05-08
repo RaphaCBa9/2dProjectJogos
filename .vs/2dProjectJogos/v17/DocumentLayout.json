@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\EnemyBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\EnemyBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\SlimeBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SlimeBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\PlayerMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerMovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,7 +11,23 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\GoblinBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\SlimeBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SlimeBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\ShooterPlantBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\ShooterPlantBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\EnemyBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\EnemyBase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\gitprojeto\\NaMiraDoLeao\\Assets\\Scripts\\game\\EnemyBehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\MenuScript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,75 +41,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\Projectile.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Projectile.cs",
+              "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\Projectile.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Projectile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T02:48:55.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMovement.cs",
               "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\PlayerMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T21:49:31.446Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "ShooterPlantBehaviour.cs",
+              "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\ShooterPlantBehaviour.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ShooterPlantBehaviour.cs",
+              "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\ShooterPlantBehaviour.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ShooterPlantBehaviour.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAADwvzQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T02:08:37.718Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "SlimeBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\SlimeBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SlimeBehaviour.cs",
               "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\SlimeBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\SlimeBehaviour.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T13:40:33.382Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "GoblinBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\GoblinBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GoblinBehaviour.cs",
               "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\GoblinBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\GoblinBehaviour.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAgwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T13:39:59.325Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "EnemyBase.cs",
               "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\EnemyBase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyBase.cs",
               "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\EnemyBase.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyBase.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAFMAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-06T13:39:05.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EnemyBehaviour.cs",
               "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\gitprojeto\\NaMiraDoLeao\\Assets\\Scripts\\game\\EnemyBehaviour.cs",
               "RelativeDocumentMoniker": "..\\..\\gitprojeto\\NaMiraDoLeao\\Assets\\Scripts\\game\\EnemyBehaviour.cs",
               "ToolTip": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\gitprojeto\\NaMiraDoLeao\\Assets\\Scripts\\game\\EnemyBehaviour.cs",
               "RelativeToolTip": "..\\..\\gitprojeto\\NaMiraDoLeao\\Assets\\Scripts\\game\\EnemyBehaviour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T14:22:40.86Z"
+              "WhenOpened": "2025-05-05T14:22:40.86Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "MenuScript.cs",
               "DocumentMoniker": "C:\\Users\\leona\\OneDrive\\\u00C1rea de Trabalho\\Faculdade\\7\u00BA Semestre\\Jogos Digitais\\Projeto2D\\2dProjectJogos\\Assets\\Scripts\\MenuScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MenuScript.cs",

@@ -4,7 +4,7 @@ public class ShooterPlantBehaviour : EnemyBase
 {
     public GameObject projectilePrefab;
     public float shootSpeed = 10f;
-    public float retreatRange = 6f; // distância mínima para começar a recuar
+    public float retreatRange = 6f;
 
     private AudioClip shootSound;
 
@@ -16,12 +16,11 @@ public class ShooterPlantBehaviour : EnemyBase
 
     protected override void Update()
     {
-        if (player == null) return;
+        if (player == null || isDead) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
         Vector2 directionToPlayer = (player.position - transform.position).normalized;
 
-        // Recuar se o jogador estiver muito perto
         if (distance < retreatRange)
         {
             Vector2 retreatDir = -directionToPlayer;
@@ -33,11 +32,9 @@ public class ShooterPlantBehaviour : EnemyBase
         }
         else
         {
-            // Parar de se mover
             anim.SetFloat("moveMagnitude", 0f);
         }
 
-        // Atirar se não estiver atacando e cooldown estiver disponível
         if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
         {
             isAttacking = true;
@@ -46,41 +43,32 @@ public class ShooterPlantBehaviour : EnemyBase
 
             anim.SetFloat("moveX", lockedAnimDirection.x);
             anim.SetFloat("moveY", lockedAnimDirection.y);
-            anim.SetBool("attack", true);
-            currentSpeed = 0f;
 
-            StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
+            anim.SetTrigger("attack");
+            currentSpeed = 0f;
             lastAttackTime = Time.time;
         }
     }
 
-    protected override float GetAttackDelay()
+    protected override System.Collections.IEnumerator PerformDelayedAttack()
     {
-        return 0.3f; // pequeno atraso antes de atirar, pode ajustar
-    }
-
-    protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        if (isDead) yield break;
 
         if (shootSound != null && audioSource != null)
             audioSource.PlayOneShot(shootSound);
 
         if (projectilePrefab != null)
         {
-            // Criar o projétil com um pequeno offset à frente da planta
             Vector2 shootPosition = (Vector2)transform.position + lockedAttackDirection * 0.5f;
             GameObject proj = Instantiate(projectilePrefab, shootPosition, Quaternion.identity);
 
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
-                rb.gravityScale = 0f; // garantir que não caia
+                rb.gravityScale = 0f;
                 rb.linearVelocity = lockedAttackDirection * shootSpeed;
             }
         }
-
-        EndAttackAnimation(); // opcional: já finaliza após disparar
     }
 
     public void EndAttackAnimation()
