@@ -12,15 +12,8 @@ public class SlimeBehavior : EnemyBase
         deathSound = Resources.Load<AudioClip>("Sounds/slimeDeath");
     }
 
-    protected override float GetAttackDelay()
+    protected override System.Collections.IEnumerator PerformDelayedAttack()
     {
-        return 0f;
-    }
-
-    protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
         if (attackSound != null && audioSource != null)
             audioSource.PlayOneShot(attackSound);
 
@@ -34,6 +27,7 @@ public class SlimeBehavior : EnemyBase
                 hit.GetComponent<Health>().TomarDano(meleeDamage);
             }
         }
+        yield break;
     }
 
     protected override void Die()

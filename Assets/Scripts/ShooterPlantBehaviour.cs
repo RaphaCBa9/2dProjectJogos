@@ -49,15 +49,9 @@ public class ShooterPlantBehaviour : EnemyBase
             lastAttackTime = Time.time;
         }
     }
-    protected override float GetAttackDelay()
-    {
-        return 0f;
-    }
 
-    protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
+    protected override System.Collections.IEnumerator PerformDelayedAttack()
     {
-        yield return new WaitForSeconds(delay);
-
         if (isDead) yield break;
 
         if (shootSound != null && audioSource != null)

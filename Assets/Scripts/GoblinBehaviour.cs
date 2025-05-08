@@ -12,14 +12,9 @@ public class GoblinBehavior : EnemyBase
         deathSound = Resources.Load<AudioClip>("Sounds/goblinDeath");
     }
 
-    protected override float GetAttackDelay()
+    protected override System.Collections.IEnumerator PerformDelayedAttack()
     {
-        return 0f;
-    }
-
-    protected override System.Collections.IEnumerator PerformDelayedAttack(float delay)
-    {
-        yield return new WaitForSeconds(delay);
+        Debug.Log($"Inimigo {gameObject.name} executou ataque em {Time.time}");
 
         if (attackSound != null && audioSource != null)
             audioSource.PlayOneShot(attackSound);
@@ -31,8 +26,9 @@ public class GoblinBehavior : EnemyBase
         {
             hit.collider.GetComponent<Health>().TomarDano(meleeDamage);
         }
+        yield break;
     }
-
+        
     protected override void Die()
     {
         if (deathSound != null && audioSource != null)

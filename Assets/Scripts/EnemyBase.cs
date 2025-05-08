@@ -81,7 +81,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     public void AttackCaller()
     {
-        StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
+        StartCoroutine(PerformDelayedAttack());
     }
 
     public virtual void EndAttackAnimation()
@@ -137,8 +137,5 @@ protected virtual void Die()
     Destroy(gameObject, 1f); // Destroi após 1 segundo (animação de morte)
 }
 
-
-
-    protected abstract float GetAttackDelay();
-    protected abstract System.Collections.IEnumerator PerformDelayedAttack(float delay);
+    protected abstract System.Collections.IEnumerator PerformDelayedAttack();
 }
