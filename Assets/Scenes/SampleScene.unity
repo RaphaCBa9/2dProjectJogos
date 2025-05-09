@@ -6397,6 +6397,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShooterPlant
       objectReference: {fileID: 0}
+    - target: {fileID: 2106948033143735155, guid: bedc4ce29949af045b8c329d96def91b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2714219075746362576, guid: bedc4ce29949af045b8c329d96def91b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6727033585305037135, guid: bedc4ce29949af045b8c329d96def91b, type: 3}
       propertyPath: maxSpeed
       value: 1
