@@ -20,6 +20,8 @@ public abstract class EnemyBase : MonoBehaviour
     protected Vector2 lockedAnimDirection;
 
     protected bool isAttacking = false;
+    protected bool isDead = false;
+
 
     protected virtual void Start()
     {
@@ -36,6 +38,12 @@ public abstract class EnemyBase : MonoBehaviour
         if (player == null) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
+        if (isDead == true)
+        {
+            anim.SetFloat("moveX", 0f);
+            anim.SetFloat("moveY", 0f);
+            anim.SetFloat("moveMagnitude", 0f);
+        }
 
         if (distance > attackRange)
         {
@@ -43,7 +51,7 @@ public abstract class EnemyBase : MonoBehaviour
             Vector2 direction = (player.position - transform.position).normalized;
             transform.position += (Vector3)(currentSpeed * Time.deltaTime * direction);
 
-            if (!anim.GetBool("attack"))
+            if (!isAttacking)
             {
                 anim.SetFloat("moveX", direction.x);
                 anim.SetFloat("moveY", direction.y);
@@ -62,18 +70,26 @@ public abstract class EnemyBase : MonoBehaviour
                 anim.SetFloat("moveY", lockedAnimDirection.y);
                 anim.SetFloat("moveMagnitude", lockedAnimDirection.magnitude);
 
-                anim.SetBool("attack", true);
-                currentSpeed = 0f;
 
-                StartCoroutine(PerformDelayedAttack(GetAttackDelay()));
+
+                anim.SetTrigger("attack");
+                currentSpeed = 0f;
                 lastAttackTime = Time.time;
             }
         }
     }
 
+    public void AttackCaller()
+    {   
+        if (isAttacking) return;
+        isAttacking=true;
+        Debug.Log($"AttackCaller chamado por {gameObject.name} em {Time.time}");
+        StartCoroutine(PerformDelayedAttack());
+    }
+
+
     public virtual void EndAttackAnimation()
     {
-        anim.SetBool("attack", false);
         currentSpeed = maxSpeed;
         isAttacking = false;
     }
@@ -81,19 +97,49 @@ public abstract class EnemyBase : MonoBehaviour
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
+
+        // Interrompe a animação de ataque, se estiver em execução
+        anim.ResetTrigger("attack");
+        isAttacking = false;
+        currentSpeed = maxSpeed;
+
+        // Toca a animação de dano imediatamente
         anim.SetTrigger("takeDamage");
+
         if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    protected virtual void Die()
+
+protected virtual void Die()
+{
+    if (isDead) return;
+
+    isDead = true;
+
+    anim.SetFloat("moveX", 0f);
+    anim.SetFloat("moveY", 0f);
+    anim.SetFloat("moveMagnitude", 0f);
+    anim.SetBool("isDead", true);
+
+    // Desabilita colisores
+    Collider2D[] colliders = GetComponents<Collider2D>();
+    foreach (var col in colliders)
     {
-        Destroy(gameObject, 1f);
-        anim.SetBool("isDead", true);
+        col.enabled = false;
     }
 
-    protected abstract float GetAttackDelay();
-    protected abstract System.Collections.IEnumerator PerformDelayedAttack(float delay);
+    // Congela física
+    if (rb != null)
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.bodyType = RigidbodyType2D.Static;
+    }
+
+    Destroy(gameObject, 1f); // Destroi após 1 segundo (animação de morte)
+}
+
+    protected abstract System.Collections.IEnumerator PerformDelayedAttack();
 }
