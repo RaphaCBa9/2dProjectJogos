@@ -16,7 +16,9 @@ public class Health : MonoBehaviour
     }
 
     public void HandleMudarSlider(float valor) {
-        healthTxt.SetText(valor.ToString("F0"));
+        if (healthTxt != null) {
+            healthTxt.SetText(valor.ToString("F0"));
+        }
     }
 
     public void TomarDano(float dano) {
