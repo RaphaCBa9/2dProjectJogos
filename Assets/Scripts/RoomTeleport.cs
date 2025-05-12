@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RoomTeleport : MonoBehaviour
 {
+
     [SerializeField] private int direction;
     private Vector3 posititionToTeleport;
 
@@ -16,44 +17,34 @@ public class RoomTeleport : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            // collision.transform.position = new(0f, 4f, 0f);
-            // SceneManager.LoadSceneAsync(2);
-            // for (int i = 1; i < SceneManager.sceneCount; i++) {
-            //     // Debug.Log(SceneManager.GetSceneAt(i).name);
-            //     SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(i).name);
-            // }
-            // SceneManager.LoadSceneAsync(Random.Range(minRandom, maxRandom+1), LoadSceneMode.Additive);
-            Debug.Log("Encostou no teleporte");
             StartCoroutine(LoadScene());
-            // collision.attachedRigidbody.MovePosition(new(collision.transform.position.x, -collision.transform.position.y));
+            
             collision.transform.position = posititionToTeleport;
-            Debug.Log("Teleportou");
-            // SceneManager.LoadSceneAsync(Random.Range(minRandom, maxRandom+1));
         }
     }
 
     private IEnumerator LoadScene() {
-        Debug.Log("Comecou carregar");
-
         GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
         RoomManager rm = roomManager.GetComponent<RoomManager>();
-        List<string> rooms = rm.roomsList;
-
-        string currentRoom = SceneManager.GetSceneAt(1).name;
-        Debug.Log(currentRoom);
+        
         string roomToLoad;
+        string currentRoom = SceneManager.GetSceneAt(1).name;
         if (rm.rooms.ContainsKey(currentRoom)) {
             if (rm.rooms[currentRoom].ContainsKey(direction)) {
                 roomToLoad = rm.rooms[currentRoom][direction];
             } else {
-                roomToLoad = rooms[Random.Range(0, rooms.Count + 1)];
+                roomToLoad = rm.roomsList[Random.Range(0, rm.roomsList.Count)];
                 rm.AddRoom(currentRoom, direction, roomToLoad);
-                rooms.Remove(roomToLoad);
+                rm.roomsList.Remove(roomToLoad);
             }
         } else {
-            roomToLoad = rooms[Random.Range(0, rooms.Count + 1)];
+            roomToLoad = rm.roomsList[Random.Range(0, rm.roomsList.Count)];
             rm.AddRoom(currentRoom, direction, roomToLoad);
-            rooms.Remove(roomToLoad);
+            rm.roomsList.Remove(roomToLoad);
+        }
+
+        if (!rm.roomObjects.ContainsKey(roomToLoad)) {
+            rm.roomObjects.Add(roomToLoad, new Dictionary<string, bool>());
         }
 
         if (direction == 0) {
@@ -71,6 +62,5 @@ public class RoomTeleport : MonoBehaviour
         while (!unload.isDone || !load.isDone) {
             yield return null;
         }
-        Debug.Log("Terminou carregar");
     }
 }

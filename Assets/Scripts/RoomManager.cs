@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
@@ -9,19 +10,8 @@ public class RoomManager : MonoBehaviour
     // 2: sul
     // 3: oeste
     public Dictionary<string, Dictionary<int, string>> rooms = new Dictionary<string, Dictionary<int, string>>();
+    public Dictionary<string, Dictionary<string, bool>> roomObjects = new Dictionary<string, Dictionary<string, bool>>();
     public List<string> roomsList = new List<string>() {"room01", "room2"};
-
-    // void Awake()
-    // {
-    //     rooms = new Dictionary<string, Dictionary<int, string>>() {
-    //         {"inicial", new Dictionary<int, string>() {{2, null}}}
-    //     };
-    // }
-
-    // void Update()
-    // {
-    //     Debug.Log(GameObject.FindGameObjectsWithTag("TeleportZone"));
-    // }
 
     public void AddRoom(string currentRoom, int position, string nextRoom) {
         if (rooms.ContainsKey(currentRoom)) {
@@ -34,6 +24,17 @@ public class RoomManager : MonoBehaviour
             rooms[nextRoom].Add((position + 2) % 4, currentRoom);
         } else {
             rooms.Add(nextRoom, new Dictionary<int, string>() {{(position + 2) % 4, currentRoom}});
+        }
+    }
+
+    void Update()
+    {
+        string currentRoom = SceneManager.GetSceneAt(1).name;
+        if (!currentRoom.Equals("inicial")) {
+            Dictionary<string, bool> objetos = roomObjects[currentRoom];
+            foreach (var (key, value) in objetos) {
+                GameObject.Find(key)?.SetActive(value);
+            }
         }
     }
 }

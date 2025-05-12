@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,15 +12,17 @@ public class PlayerMovement : MonoBehaviour
     private float speed;
     public GameObject coinPrefab;
 
+    private GameObject roomManager;
+
     [SerializeField] private GameObject attackHitBox;
     [SerializeField] private float attackHitBoxOffset = 1f;
     private float lastMeleeAtack;
     private float meleeAttackCooldown = 0.5f;
 
-    // void Awake()
-    // {
-    //     DontDestroyOnLoad(this.gameObject);
-    // }
+    void Awake()
+    {
+        roomManager = GameObject.FindGameObjectWithTag("RoomManager");
+    }
 
     void Start()
     {
@@ -107,10 +110,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
-            Destroy(other.gameObject);
             maxSpeed += 1f;
             speed = maxSpeed;
-            // Instantiate(coinPrefab, transform.position, Quaternion.identity);
+
+            RoomManager rm = roomManager.GetComponent<RoomManager>();
+            string currentRoom = SceneManager.GetSceneAt(1).name;
+            rm.roomObjects[currentRoom].Add(other.gameObject.name, false);
+
+            Destroy(other.gameObject);
         }
     }
 }
