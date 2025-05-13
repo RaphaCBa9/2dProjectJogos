@@ -5,7 +5,10 @@ public class PowerUp : MonoBehaviour
 {
     public Dictionary<string, bool> powerUpsAtivos = new Dictionary<string, bool>() {
         {"isAutomaticShotActive", false},
-        {"isKnockbackActive", false}
+        {"isKnockbackActive", false},
+        {"+0.5Speed", false},
+        {"+1Speed", false},
+        {"+1.5Speed", false},
     };
 
     public GameObject shotPrefab;

@@ -7,6 +7,9 @@ public class Collectable : MonoBehaviour
     public List<string> possibleCollectables = new List<string> {
         "isAutomaticShotActive",
         "isKnockbackActive",
+        "+0.5Speed",
+        "+1Speed",
+        "+1.5Speed",
     };
     public int coletavelIndex = 0;
 
@@ -19,9 +22,23 @@ public class Collectable : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             pu.powerUpsAtivos[possibleCollectables[coletavelIndex]] = true;
+
             if (possibleCollectables[coletavelIndex].Equals("isKnockbackActive")) {
                 pu.ApplyKnockback();
+            } else if (possibleCollectables[coletavelIndex].Equals("+0.5Speed")) {
+                PlayerMovement pm = collision.GetComponent<PlayerMovement>();
+                pm.maxSpeed += 0.5f;
+                pm.speed = pm.maxSpeed;
+            } else if (possibleCollectables[coletavelIndex].Equals("+1Speed")) {
+                PlayerMovement pm = collision.GetComponent<PlayerMovement>();
+                pm.maxSpeed += 1;
+                pm.speed = pm.maxSpeed;
+            } else if (possibleCollectables[coletavelIndex].Equals("+1.5Speed")) {
+                PlayerMovement pm = collision.GetComponent<PlayerMovement>();
+                pm.maxSpeed += 1.5f;
+                pm.speed = pm.maxSpeed;
             }
+
             Destroy(gameObject);
         }
     }
