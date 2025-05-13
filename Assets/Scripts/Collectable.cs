@@ -6,6 +6,7 @@ public class Collectable : MonoBehaviour
     private PowerUp pu;
     public List<string> possibleCollectables = new List<string> {
         "isAutomaticShotActive",
+        "isKnockbackActive",
     };
     public int coletavelIndex = 0;
 
@@ -18,6 +19,9 @@ public class Collectable : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             pu.powerUpsAtivos[possibleCollectables[coletavelIndex]] = true;
+            if (possibleCollectables[coletavelIndex].Equals("isKnockbackActive")) {
+                pu.ApplyKnockback();
+            }
             Destroy(gameObject);
         }
     }

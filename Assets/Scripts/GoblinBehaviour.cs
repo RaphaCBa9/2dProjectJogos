@@ -24,7 +24,11 @@ public class GoblinBehavior : EnemyBase
 
         if (hit.collider != null && hit.collider.CompareTag("Player"))
         {
-            hit.collider.GetComponent<Health>().TomarDano(meleeDamage);
+            Health h = hit.collider.GetComponent<Health>();
+            h.TomarDano(meleeDamage);
+            if (h.isKnockbackActive) {
+                rb.MovePosition(-lockedAnimDirection * h.knockbackAmount + rb.position);
+            }
         }
         yield break;
     }
