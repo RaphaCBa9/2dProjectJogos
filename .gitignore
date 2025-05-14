@@ -38,3 +38,5 @@ UnityPackageManager/
 
 # JetBrains
 *.sln.dotSettings
+
+*.vs/
