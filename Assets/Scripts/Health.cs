@@ -10,13 +10,18 @@ public class Health : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private GameObject gameOverPanel; 
     
+    public bool isKnockbackActive = false;
+    public float knockbackAmount;
+    
     void Start()
     {
         healthPoints = maxHealthPoints;
     }
 
     public void HandleMudarSlider(float valor) {
-        healthTxt.SetText(valor.ToString("F0"));
+        if (healthTxt != null) {
+            healthTxt.SetText(valor.ToString("F0"));
+        }
     }
 
     public void TomarDano(float dano) {

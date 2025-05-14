@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public abstract class EnemyBase : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public abstract class EnemyBase : MonoBehaviour
         {
             if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
             {
-                isAttacking = true;
+                // isAttacking = true;
                 lockedAttackDirection = (player.position - transform.position).normalized;
                 lockedAnimDirection = lockedAttackDirection;
 
@@ -98,12 +99,12 @@ public abstract class EnemyBase : MonoBehaviour
     {
         currentHealth -= amount;
 
-        // Interrompe a animação de ataque, se estiver em execução
+        // Interrompe a animaï¿½ï¿½o de ataque, se estiver em execuï¿½ï¿½o
         anim.ResetTrigger("attack");
         isAttacking = false;
         currentSpeed = maxSpeed;
 
-        // Toca a animação de dano imediatamente
+        // Toca a animaï¿½ï¿½o de dano imediatamente
         anim.SetTrigger("takeDamage");
 
         if (currentHealth <= 0)
@@ -131,14 +132,19 @@ protected virtual void Die()
         col.enabled = false;
     }
 
-    // Congela física
+    // Congela fï¿½sica
     if (rb != null)
     {
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Static;
     }
 
-    Destroy(gameObject, 1f); // Destroi após 1 segundo (animação de morte)
+    GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
+    RoomManager rm = roomManager.GetComponent<RoomManager>();
+    string currentRoom = SceneManager.GetSceneAt(1).name;
+    rm.roomObjects[currentRoom].Add(gameObject.name, false);
+
+    Destroy(gameObject, 1f); // Destroi apï¿½s 1 segundo (animaï¿½ï¿½o de morte)
 }
 
     protected abstract System.Collections.IEnumerator PerformDelayedAttack();
