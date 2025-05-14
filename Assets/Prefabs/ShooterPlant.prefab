@@ -412,6 +412,7 @@ MonoBehaviour:
   attackCooldown: 2
   maxHealth: 3
   meleeDamage: 5
+  delay: 0.8
   projectilePrefab: {fileID: 3793187744034154460, guid: f1b81ca3df3348241a7171fbd4da1dff, type: 3}
   shootSpeed: 10
   retreatRange: 6
