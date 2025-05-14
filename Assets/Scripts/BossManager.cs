@@ -25,10 +25,15 @@ public class BossManager : MonoBehaviour
         if (Time.time - timePassed > timeToSpawnBoss1 && boss1CanSpawn) {
             boss1CanSpawn = false;
             Instantiate(boss1Prefab);
+            GameObject[] teleports = GameObject.FindGameObjectsWithTag("TeleportZone");
+            foreach (GameObject obj in teleports) {
+                obj.GetComponent<RoomTeleport>().enabled = false;
+                obj.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
+                obj.GetComponent<BoxCollider2D>().isTrigger = false;
+            }
         }
         if (Time.time - timePassed > timeToChangeIcon) {
             Image i = imageToChange.GetComponent<Image>();
-            // i.color = new Color(5f, 100f, 200f);
             i.sprite = bossAproachingIcon;
         }
     }
