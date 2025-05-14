@@ -63,7 +63,7 @@ public abstract class EnemyBase : MonoBehaviour
         {
             if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
             {
-                isAttacking = true;
+                // isAttacking = true;
                 lockedAttackDirection = (player.position - transform.position).normalized;
                 lockedAnimDirection = lockedAttackDirection;
 

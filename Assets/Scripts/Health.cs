@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     [SerializeField] private Slider slider;
     [SerializeField] private GameObject gameOverPanel; 
     
+    public bool isKnockbackActive = false;
+    public float knockbackAmount;
+    
     void Start()
     {
         healthPoints = maxHealthPoints;

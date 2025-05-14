@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private Vector2 movement;
     private Vector2 lastMovement;
-    [SerializeField] private float maxSpeed = 5f;
-    private float speed;
+    [SerializeField] public float maxSpeed = 5f;
+    public float speed;
     public GameObject coinPrefab;
 
     private GameObject roomManager;
