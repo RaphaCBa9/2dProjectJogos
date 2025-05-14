@@ -126,6 +126,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -384,7 +423,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AncientSkeletonUpAttack02_0: 5181685362317804160
+      AncientSkeletonUpAttack02_1: -2345873200119180375
+      AncientSkeletonUpAttack02_10: -3825343745935274714
+      AncientSkeletonUpAttack02_2: -6743037587100358556
+      AncientSkeletonUpAttack02_3: 2337138949807813511
+      AncientSkeletonUpAttack02_4: -8891672230143178821
+      AncientSkeletonUpAttack02_5: -8660080559616425108
+      AncientSkeletonUpAttack02_6: 6955653610807951983
+      AncientSkeletonUpAttack02_7: 3118161087683156205
+      AncientSkeletonUpAttack02_8: 6160022110754310543
+      AncientSkeletonUpAttack02_9: 6302666884299483489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

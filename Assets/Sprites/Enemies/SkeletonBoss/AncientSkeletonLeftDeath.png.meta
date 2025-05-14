@@ -144,6 +144,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -534,7 +573,24 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AncientSkeletonLeftDeath_0: -1574942377326365897
+      AncientSkeletonLeftDeath_1: -2829994377853484753
+      AncientSkeletonLeftDeath_10: 3913900340187422783
+      AncientSkeletonLeftDeath_11: 3945152861697137399
+      AncientSkeletonLeftDeath_12: 4716545963444920894
+      AncientSkeletonLeftDeath_13: -1352901596747417894
+      AncientSkeletonLeftDeath_14: -8378439783887705724
+      AncientSkeletonLeftDeath_15: -6690770971487013859
+      AncientSkeletonLeftDeath_16: 782243131995116258
+      AncientSkeletonLeftDeath_2: 5165622317915313135
+      AncientSkeletonLeftDeath_3: -7820449575823464045
+      AncientSkeletonLeftDeath_4: -6387679349212308117
+      AncientSkeletonLeftDeath_5: 1134577208687056195
+      AncientSkeletonLeftDeath_6: -8358607339608901045
+      AncientSkeletonLeftDeath_7: 3394105049167189750
+      AncientSkeletonLeftDeath_8: -6475935611971896785
+      AncientSkeletonLeftDeath_9: 111441139599341843
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
