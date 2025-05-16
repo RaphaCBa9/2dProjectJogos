@@ -6,9 +6,9 @@ public class Health : MonoBehaviour
 {
     public float maxHealthPoints = 100f;
     public float healthPoints;
-    [SerializeField] private TMP_Text healthTxt;
-    [SerializeField] private Slider slider;
-    [SerializeField] private GameObject gameOverPanel; 
+    public TMP_Text healthTxt;
+    public Slider slider;
+    public GameObject gameOverPanel; 
     
     public bool isKnockbackActive = false;
     public float knockbackAmount;
