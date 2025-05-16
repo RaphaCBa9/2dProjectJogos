@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,6 +126,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -133,10 +172,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 16
-        width: 50
-        height: 57
+        x: 0
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +194,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_1
       rect:
         serializedVersion: 2
-        x: 95
-        y: 7
-        width: 58
-        height: 68
+        x: 80
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,10 +216,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_2
       rect:
         serializedVersion: 2
-        x: 175
-        y: 1
-        width: 145
-        height: 77
+        x: 160
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,10 +238,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_3
       rect:
         serializedVersion: 2
-        x: 319
-        y: 1
-        width: 66
-        height: 75
+        x: 240
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +260,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_4
       rect:
         serializedVersion: 2
-        x: 399
-        y: 1
-        width: 66
-        height: 75
+        x: 320
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,10 +282,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_5
       rect:
         serializedVersion: 2
-        x: 480
-        y: 5
-        width: 81
-        height: 73
+        x: 400
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +304,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_6
       rect:
         serializedVersion: 2
-        x: 575
-        y: 1
-        width: 66
-        height: 75
+        x: 480
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,10 +326,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_7
       rect:
         serializedVersion: 2
-        x: 655
-        y: 1
-        width: 145
-        height: 77
+        x: 560
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +348,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_8
       rect:
         serializedVersion: 2
-        x: 810
+        x: 640
         y: 0
-        width: 55
-        height: 76
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,10 +370,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_9
       rect:
         serializedVersion: 2
-        x: 885
+        x: 720
         y: 0
-        width: 60
-        height: 76
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,10 +392,10 @@ TextureImporter:
       name: AncientSkeletonUpAttack02_10
       rect:
         serializedVersion: 2
-        x: 965
-        y: 2
-        width: 60
-        height: 72
+        x: 800
+        y: 0
+        width: 80
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,11 +410,55 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonUpAttack02_11
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294065453fbc84e45a2b0e3b4fb35b48
+      internalID: 39150740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AncientSkeletonUpAttack02_12
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd25548aeb3ca244b3cd6d4b62d24b5
+      internalID: 1713750115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ad1d3deaa4bbbf445a3cf5faf8b9e26d
     internalID: 0
     vertices: []
     indices: 
@@ -384,7 +467,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AncientSkeletonUpAttack02_0: 5181685362317804160
+      AncientSkeletonUpAttack02_1: -2345873200119180375
+      AncientSkeletonUpAttack02_10: -3825343745935274714
+      AncientSkeletonUpAttack02_11: 39150740
+      AncientSkeletonUpAttack02_12: 1713750115
+      AncientSkeletonUpAttack02_2: -6743037587100358556
+      AncientSkeletonUpAttack02_3: 2337138949807813511
+      AncientSkeletonUpAttack02_4: -8891672230143178821
+      AncientSkeletonUpAttack02_5: -8660080559616425108
+      AncientSkeletonUpAttack02_6: 6955653610807951983
+      AncientSkeletonUpAttack02_7: 3118161087683156205
+      AncientSkeletonUpAttack02_8: 6160022110754310543
+      AncientSkeletonUpAttack02_9: 6302666884299483489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

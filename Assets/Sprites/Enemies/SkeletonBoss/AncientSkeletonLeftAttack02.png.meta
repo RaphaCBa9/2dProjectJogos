@@ -73,7 +73,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -121,6 +121,45 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -434,7 +473,20 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AncientSkeletonLeftAttack02_0: 4398361029202322928
+      AncientSkeletonLeftAttack02_1: -7736637505781171808
+      AncientSkeletonLeftAttack02_10: -5441700540406516049
+      AncientSkeletonLeftAttack02_11: -3233639153450613635
+      AncientSkeletonLeftAttack02_12: 5157023176223811630
+      AncientSkeletonLeftAttack02_2: 4988839754548882899
+      AncientSkeletonLeftAttack02_3: 7793301530235783435
+      AncientSkeletonLeftAttack02_4: 6327566637065562287
+      AncientSkeletonLeftAttack02_5: -8676963773810479724
+      AncientSkeletonLeftAttack02_6: 5649688303248025278
+      AncientSkeletonLeftAttack02_7: -4310245302737634984
+      AncientSkeletonLeftAttack02_8: -6934147301646608577
+      AncientSkeletonLeftAttack02_9: -2470988301898489106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
