@@ -1,6 +1,8 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -28,6 +30,13 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        Health h = GetComponent<Health>();
+        h.slider = GameObject.FindGameObjectWithTag("SliderVidaUI").GetComponent<Slider>();
+        h.healthTxt = GameObject.FindGameObjectWithTag("TextoVidaUI").GetComponent<TMP_Text>();
+        h.gameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanelUI");
+        h.gameOverPanel.SetActive(false);
+        h.slider.maxValue = h.maxHealthPoints;
+        h.HandleMudarSlider(h.maxHealthPoints);
         speed = maxSpeed;
         lastMeleeAtack = Time.time;
     }

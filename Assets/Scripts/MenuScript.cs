@@ -13,6 +13,8 @@ public class MenuScript : MonoBehaviour
 
     public void GoToMenu()
     {
+        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
+        Destroy(gm);
         SceneManager.LoadSceneAsync(0);
     }
 }

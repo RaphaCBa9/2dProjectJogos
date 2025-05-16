@@ -8,6 +8,10 @@ TagManager:
   - Enemy
   - TeleportZone
   - RoomManager
+  - GameManager
+  - SliderVidaUI
+  - TextoVidaUI
+  - GameOverPanelUI
   layers:
   - Default
   - TransparentFX
