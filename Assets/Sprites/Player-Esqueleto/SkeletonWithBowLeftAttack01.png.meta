@@ -315,12 +315,12 @@ TextureImporter:
       name: SkeletonWithBowLeftAttack01_9
       rect:
         serializedVersion: 2
-        x: 382
+        x: 395
         y: 5
-        width: 35
+        width: 22
         height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.53694016, y: 0.50000006}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -337,12 +337,12 @@ TextureImporter:
       name: SkeletonWithBowLeftAttack01_10
       rect:
         serializedVersion: 2
-        x: 433
+        x: 443
         y: 5
-        width: 32
+        width: 22
         height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.53283554, y: 0.50000006}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
