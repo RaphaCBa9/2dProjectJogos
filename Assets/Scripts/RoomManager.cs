@@ -11,7 +11,7 @@ public class RoomManager : MonoBehaviour
     // 3: oeste
     public Dictionary<string, Dictionary<int, string>> rooms = new Dictionary<string, Dictionary<int, string>>();
     public Dictionary<string, Dictionary<string, bool>> roomObjects = new Dictionary<string, Dictionary<string, bool>>();
-    public List<string> roomsList = new List<string>() {"room01", "room2"};
+    public List<string> roomsList = new List<string>() {"room01", "room2", "room03", "room04"};
 
     public void AddRoom(string currentRoom, int position, string nextRoom) {
         if (rooms.ContainsKey(currentRoom)) {
