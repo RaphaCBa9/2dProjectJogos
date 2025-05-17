@@ -12,6 +12,8 @@ TagManager:
   - SliderVidaUI
   - TextoVidaUI
   - GameOverPanelUI
+  - ZombieTrail
+  - PortalLobby
   layers:
   - Default
   - TransparentFX
