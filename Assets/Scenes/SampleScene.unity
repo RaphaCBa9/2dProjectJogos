@@ -6044,6 +6044,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyGoblin2
       objectReference: {fileID: 0}
+    - target: {fileID: 6379182006735921613, guid: eb2427f98cda6dd45abea965e3dfd5dc, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379182006735921613, guid: eb2427f98cda6dd45abea965e3dfd5dc, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6336,6 +6344,71 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 880776532}
   m_SourcePrefab: {fileID: 100100000, guid: 6d7941549c820ec4d9827dbd15d8b135, type: 3}
+--- !u!1001 &7489861762955327915
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2066052153202686440, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_Name
+      value: EnemyZombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210790999952057361, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: maxSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5210790999952057361, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11703951
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5342145950715319166, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ab8febabfb76c90458d4e1222810e551, type: 3}
 --- !u!1001 &7716724565840534469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6347,6 +6420,14 @@ PrefabInstance:
     - target: {fileID: 2881866143720735022, guid: e5a31aec3be560e4688b51e15e4b0135, type: 3}
       propertyPath: m_Name
       value: EnemyGoblin3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881866143720735022, guid: e5a31aec3be560e4688b51e15e4b0135, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2881866143720735022, guid: e5a31aec3be560e4688b51e15e4b0135, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8730949126884980436, guid: e5a31aec3be560e4688b51e15e4b0135, type: 3}
       propertyPath: maxHealth
@@ -6422,3 +6503,4 @@ SceneRoots:
   - {fileID: 3960406534680798569}
   - {fileID: 3791894961960149115}
   - {fileID: 7716724565840534469}
+  - {fileID: 7489861762955327915}
