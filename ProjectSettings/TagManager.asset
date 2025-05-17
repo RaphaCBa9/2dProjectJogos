@@ -12,6 +12,7 @@ TagManager:
   - SliderVidaUI
   - TextoVidaUI
   - GameOverPanelUI
+  - Boss
   layers:
   - Default
   - TransparentFX
