@@ -30,6 +30,23 @@ public class PlayerSkeletonAttack : MonoBehaviour
         {
             attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
         }
+        else if (attackDir.Equals(Vector2.one))
+        {
+            attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 45f));
+        }
+        else if (attackDir.Equals(- Vector2.one))
+        {
+            attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 225f));
+        }
+        else if (attackDir.Equals(new Vector2(-1, 1)))
+        {
+            attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 135f));
+        }
+        else if (attackDir.Equals(new Vector2(1, -1)))
+        {
+            attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 315f));
+        }
+
 
         GameObject arrow = Instantiate(arrowPrefab, transform.position, attackRotation);
         arrow.GetComponent<ShotMovement>().moveDir = attackDir;
