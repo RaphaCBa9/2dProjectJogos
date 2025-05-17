@@ -81,6 +81,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
                 SceneManager.LoadSceneAsync("inicial", LoadSceneMode.Additive);
+                BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
+                bm.boss1CanSpawn = true;
+                bm.timePassed = Time.time;
             }
             lastInteraction = Time.time;
         }

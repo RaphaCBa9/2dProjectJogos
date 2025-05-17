@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 81201819}
   m_Layer: 0
   m_Name: BossManager
-  m_TagString: Untagged
+  m_TagString: BossManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -224,9 +224,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageToChange: {fileID: 312620628}
-  delayToChangeIcon: 15
-  bossAproachingIcon: {fileID: 3884257203521608489, guid: 462c245be19ef2147a27332858703cae, type: 3}
-  timeToSpawnBoss1: 60
+  bossAproachingIcon1quarto: {fileID: 5280016744796449434, guid: 2c7ec356e73ad30458fc40fd40cc1324, type: 3}
+  bossAproachingIcon2quarto: {fileID: 5613424851114667450, guid: ee2e2077c5c5c714aa46b6b7db3e1179, type: 3}
+  bossAproachingIcon3quarto: {fileID: -6394459255467369752, guid: 0eae56a3e8e9586429906a24cc9474d0, type: 3}
+  bossAproachingIcon4quarto: {fileID: 5132276888542391536, guid: 07e6ac2af011b4147949178540901e86, type: 3}
+  timeToSpawnBoss1: 90
+  timePassed: 0
+  boss1CanSpawn: 0
   boss1Prefab: {fileID: 1269675010959082817, guid: 56d2b07d539593d45b7c08ce0fdec2a1, type: 3}
 --- !u!4 &81201820
 Transform:
@@ -417,7 +421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6129436336681090288, guid: 6ccafeb106748ab4da5373849df05f98, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

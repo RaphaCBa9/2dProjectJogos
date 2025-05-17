@@ -15,6 +15,7 @@ TagManager:
   - ZombieTrail
   - PortalLobby
   - Boss
+  - BossManager
   layers:
   - Default
   - TransparentFX
