@@ -37,7 +37,7 @@ public class ShooterPlantBehaviour : EnemyBase
 
         if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
         {
-            isAttacking = true;
+            // isAttacking = true;
             lockedAttackDirection = directionToPlayer;
             lockedAnimDirection = directionToPlayer;
 
@@ -71,7 +71,7 @@ public class ShooterPlantBehaviour : EnemyBase
         }
     }
 
-    public void EndAttackAnimation()
+    override public void EndAttackAnimation()
     {
         base.EndAttackAnimation();
     }
