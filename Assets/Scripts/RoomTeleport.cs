@@ -18,8 +18,14 @@ public class RoomTeleport : MonoBehaviour
     {
         if (collision.CompareTag("Player")) {
             StartCoroutine(LoadScene());
-            
+
             collision.transform.position = posititionToTeleport;
+
+            GameObject[] zombieTrails = GameObject.FindGameObjectsWithTag("ZombieTrail");
+            foreach (GameObject obj in zombieTrails)
+            {
+                obj.SetActive(false);
+            }
         }
     }
 
