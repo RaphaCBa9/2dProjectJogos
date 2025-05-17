@@ -42,7 +42,6 @@ public class skeletonBossScript : MonoBehaviour
         }
 
         distanceFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
-        Debug.Log("Distance from player: " + distanceFromPlayer);
 
         if (distanceFromPlayer < 10f)
         {
@@ -111,8 +110,9 @@ public class skeletonBossScript : MonoBehaviour
         animator.SetFloat("moveMagnitude", speedMagnitude);
     }
 
-    private void takeDamage(int damage)
+    public void takeDamage(int damage)
     {
+        Debug.Log("Boss took damage: " + damage);
         health -= damage;
         if (health <= 0)
         {
