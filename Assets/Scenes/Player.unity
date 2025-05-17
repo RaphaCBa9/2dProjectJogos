@@ -227,7 +227,7 @@ MonoBehaviour:
   delayToChangeIcon: 15
   bossAproachingIcon: {fileID: 3884257203521608489, guid: 462c245be19ef2147a27332858703cae, type: 3}
   timeToSpawnBoss1: 60
-  boss1Prefab: {fileID: 3183159857454905002, guid: c9e713de2aa5bf24990b7c065bfa280d, type: 3}
+  boss1Prefab: {fileID: 1269675010959082817, guid: 56d2b07d539593d45b7c08ce0fdec2a1, type: 3}
 --- !u!4 &81201820
 Transform:
   m_ObjectHideFlags: 0
