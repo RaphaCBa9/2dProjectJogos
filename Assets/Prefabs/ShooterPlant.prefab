@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6727033585305037135}
   m_Layer: 8
   m_Name: ShooterPlant
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,7 +412,6 @@ MonoBehaviour:
   attackCooldown: 2
   maxHealth: 3
   meleeDamage: 5
-  delay: 0.8
   projectilePrefab: {fileID: 3793187744034154460, guid: f1b81ca3df3348241a7171fbd4da1dff, type: 3}
   shootSpeed: 10
   retreatRange: 6
