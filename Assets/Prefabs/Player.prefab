@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5908374997931839890}
@@ -83,12 +83,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1607745040358044367, guid: 11a600bbef12e194dbbc722aafcaf25c, type: 3}
+  m_Sprite: {fileID: 7276015634664171536, guid: 9d4c87fd6c3297b46a3a2199022ba021, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.22, y: 0.33}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,7 +129,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1.06
+  m_Radius: 0.2
 --- !u!50 &568536693116279397
 Rigidbody2D:
   serializedVersion: 5
@@ -191,10 +191,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abc65f10525a7814eb22470ca425f052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0}
+  lastMovement: {x: 0, y: 0}
   maxSpeed: 5
+  speed: 0
   coinPrefab: {fileID: 2544743618782576424, guid: 86dce78fac59d934ebc41f3f3b45d6f4, type: 3}
   attackHitBox: {fileID: 4284526654412049305}
   attackHitBoxOffset: 1
+  canUsePortalLobby: 0
 --- !u!114 &3605764178983900906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,6 +216,8 @@ MonoBehaviour:
   healthTxt: {fileID: 0}
   slider: {fileID: 0}
   gameOverPanel: {fileID: 0}
+  isKnockbackActive: 0
+  knockbackAmount: 0
 --- !u!114 &7893884206576603872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPrefab: {fileID: 1324332179881388809, guid: 13b78996c398dcd4b976dc59bb09269b, type: 3}
   automaticShotCooldown: 0.5
+  knockbackAmount: 1
 --- !u!1 &4284526654412049305
 GameObject:
   m_ObjectHideFlags: 0
