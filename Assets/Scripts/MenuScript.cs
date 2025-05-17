@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    public void PlayGame()
+    public void ChooseCharacter()
     {
-        SceneManager.LoadSceneAsync(2);
-        SceneManager.LoadSceneAsync(3, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("PlayerSelect");
     }
 
     public void GoToMenu()

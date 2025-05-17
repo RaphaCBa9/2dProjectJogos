@@ -30,7 +30,7 @@ public class RoomManager : MonoBehaviour
     void Update()
     {
         string currentRoom = SceneManager.GetSceneAt(1).name;
-        if (!currentRoom.Equals("inicial")) {
+        if (!currentRoom.Equals("inicial") && !currentRoom.Equals("Lobby")) {
             Dictionary<string, bool> objetos = roomObjects[currentRoom];
             foreach (var (key, value) in objetos) {
                 GameObject.Find(key)?.SetActive(value);
