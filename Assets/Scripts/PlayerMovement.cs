@@ -21,6 +21,10 @@ public class PlayerMovement : MonoBehaviour
     private float lastMeleeAtack;
     private float meleeAttackCooldown = 0.5f;
 
+    private float interactCooldown = 1f;
+    private float lastInteraction;
+    public bool canUsePortalLobby = false;
+
     void Awake()
     {
         roomManager = GameObject.FindGameObjectWithTag("RoomManager");
@@ -39,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         h.HandleMudarSlider(h.maxHealthPoints);
         speed = maxSpeed;
         lastMeleeAtack = Time.time;
+        lastInteraction = Time.time;
     }
 
     // Update is called once per frame
@@ -65,6 +70,19 @@ public class PlayerMovement : MonoBehaviour
         if (attack > 0 && Time.time - lastMeleeAtack > meleeAttackCooldown) {
             lastMeleeAtack = Time.time;
             Attack();
+        }
+    }
+
+    void Update() {
+        float interact = Input.GetAxisRaw("Interact");
+        if (interact > 0 && Time.time - lastInteraction > interactCooldown)
+        {
+            if (canUsePortalLobby)
+            {
+                SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
+                SceneManager.LoadSceneAsync("inicial", LoadSceneMode.Additive);
+            }
+            lastInteraction = Time.time;
         }
     }
 
@@ -127,6 +145,16 @@ public class PlayerMovement : MonoBehaviour
             rm.roomObjects[currentRoom].Add(other.gameObject.name, false);
 
             Destroy(other.gameObject);
+        }
+
+        if (other.CompareTag("PortalLobby")) {
+            canUsePortalLobby = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("PortalLobby")) {
+            canUsePortalLobby = false;
         }
     }
 }

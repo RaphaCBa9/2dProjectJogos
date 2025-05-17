@@ -28,8 +28,8 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Player");
-        // SceneManager.LoadSceneAsync("Lobby", LoadSceneMode.Additive);
-        SceneManager.LoadSceneAsync("inicial", LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync("Lobby", LoadSceneMode.Additive);
+        // SceneManager.LoadSceneAsync("inicial", LoadSceneMode.Additive);
     }
 
 }
