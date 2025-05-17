@@ -231,7 +231,7 @@ MonoBehaviour:
   timeToSpawnBoss1: 90
   timePassed: 0
   boss1CanSpawn: 0
-  boss1Prefab: {fileID: 1269675010959082817, guid: 56d2b07d539593d45b7c08ce0fdec2a1, type: 3}
+  boss1Prefab: {fileID: 1205271247170005234, guid: 90fd777a276d3c64a917286363b8f886, type: 3}
 --- !u!4 &81201820
 Transform:
   m_ObjectHideFlags: 0
