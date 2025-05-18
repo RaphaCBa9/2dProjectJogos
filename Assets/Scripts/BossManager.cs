@@ -3,6 +3,11 @@ using UnityEngine.UI;
 
 public class BossManager : MonoBehaviour
 {
+
+    public GameObject musicManager; // Musica do boss
+    public AudioSource bossMusicSource; // Musica do boss
+    public AudioClip bossMusic; // Musica do boss
+
     [SerializeField] private GameObject imageToChange; // Imagem na UI para mudar quando o Boss estiver quase spawnando
     private float timeToChangeIcon1; // Quanto tempo depois de comecar a fase o icone deve mudar
     private float timeToChangeIcon2; // Quanto tempo depois de comecar a fase o icone deve mudar
@@ -26,6 +31,16 @@ public class BossManager : MonoBehaviour
         timeToChangeIcon2 = 2 * timeToSpawnBoss1 / 4;
         timeToChangeIcon3 = 3 * timeToSpawnBoss1 / 4;
         timeToChangeIcon4 = 4 * timeToSpawnBoss1 / 4;
+
+        musicManager = GameObject.Find("MusicManager");
+        if (musicManager != null)
+        {
+            bossMusicSource = musicManager.GetComponent<AudioSource>();
+        }
+        else
+        {
+            Debug.LogError("MusicManager not found in the scene.");
+        }
     }
 
     // Update is called once per frame
@@ -33,11 +48,23 @@ public class BossManager : MonoBehaviour
     {
         if (boss1CanSpawn)
         {
-            if (Time.time - timePassed > timeToSpawnBoss1) {
+            
+            if (Time.time - timePassed > timeToSpawnBoss1)
+            {
+                if (musicManager != null && bossMusicSource != null)
+                {
+                    bossMusicSource.clip = bossMusic;
+                    bossMusicSource.Play();
+                }
+                else
+                {
+                    Debug.LogError("MusicManager or AudioSource not found in the scene.");
+                }
                 boss1CanSpawn = false;
                 Instantiate(boss1Prefab);
                 GameObject[] teleports = GameObject.FindGameObjectsWithTag("TeleportZone");
-                foreach (GameObject obj in teleports) {
+                foreach (GameObject obj in teleports)
+                {
                     obj.GetComponent<RoomTeleport>().enabled = false;
                     obj.GetComponent<SpriteRenderer>().color = new Color(255f, 0f, 0f, 255f);
                     obj.GetComponent<BoxCollider2D>().isTrigger = false;
