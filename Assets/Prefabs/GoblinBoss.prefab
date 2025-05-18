@@ -216,6 +216,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7920095686992136371}
   - component: {fileID: 8169401514190410211}
+  - component: {fileID: 3018771272018493225}
   m_Layer: 0
   m_Name: UpCollider
   m_TagString: Untagged
@@ -284,6 +285,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &3018771272018493225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269411786374109597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeDamage: 10
 --- !u!1 &4600210579524283323
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6418965649903687854}
   - component: {fileID: 6735563139947850458}
+  - component: {fileID: 8518702622743990975}
   m_Layer: 0
   m_Name: LeftCollider
   m_TagString: Untagged
@@ -362,6 +377,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &8518702622743990975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600210579524283323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeDamage: 10
 --- !u!1 &4782760660741919606
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 352179358778393534}
   - component: {fileID: 8497837284014189460}
+  - component: {fileID: 5140144134122575609}
   m_Layer: 0
   m_Name: DownCollider
   m_TagString: Untagged
@@ -440,6 +469,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &5140144134122575609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4782760660741919606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeDamage: 10
 --- !u!1 &8338871820242063849
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5513169038271476477}
   - component: {fileID: 9196729963443428200}
+  - component: {fileID: 1323307437711740598}
   m_Layer: 0
   m_Name: RightCollider
   m_TagString: Untagged
@@ -518,3 +561,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.4, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1323307437711740598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8338871820242063849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeDamage: 10

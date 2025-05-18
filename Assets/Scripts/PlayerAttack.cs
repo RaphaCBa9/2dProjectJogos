@@ -9,31 +9,40 @@ public class PlayerAttack : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             EnemyBase e = collision.gameObject.GetComponent<EnemyBase>();
-            e.TakeDamage(meleeDamage);
+            if (e != null)
+            {
+                e.TakeDamage(meleeDamage);
+            }
         }
-        if (collision.CompareTag("Boss"))
+        else if (collision.CompareTag("Boss"))
         {
-            try
+            // Tenta causar dano em qualquer tipo de boss existente
+            var boss1 = collision.gameObject.GetComponent<skeletonBossScript>();
+            if (boss1 != null)
             {
-                skeletonBossScript b = collision.gameObject.GetComponent<skeletonBossScript>();
-                b.takeDamage(meleeDamage);
+                boss1.takeDamage(meleeDamage);
             }
-            catch (System.Exception ex)
+
+            var boss2 = collision.gameObject.GetComponent<skeletonBossScript2>();
+            if (boss2 != null)
             {
-                Debug.Log("Error while trying to deal damage to the boss: " + ex.Message);
+                boss2.takeDamage(meleeDamage);
             }
-            finally
+
+            var goblinBoss = collision.gameObject.GetComponent<GoblinBoss>();
+            if (goblinBoss != null)
             {
-                skeletonBossScript2 b = collision.gameObject.GetComponent<skeletonBossScript2>();
-                b.takeDamage(meleeDamage);
+                goblinBoss.takeDamage(meleeDamage);
             }
         }
-        if (collision.CompareTag("Breakable"))
+        else if (collision.CompareTag("Breakable"))
         {
             Debug.Log("Hit a breakable object");
             Breakable b = collision.gameObject.GetComponent<Breakable>();
-            b.TakeDamage();
+            if (b != null)
+            {
+                b.TakeDamage();
+            }
         }
     }
-
 }
