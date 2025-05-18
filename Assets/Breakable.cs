@@ -11,6 +11,10 @@ public class Breakable : MonoBehaviour
     
     public Rigidbody2D rb;
 
+    public AudioClip breakSound;
+    public AudioClip hitSound;
+    public AudioSource audioSource;
+
     public
     void Start()
     {
@@ -26,6 +30,18 @@ public class Breakable : MonoBehaviour
             Debug.LogError("Collider component is missing on the GameObject.");
         }
 
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component is missing on the GameObject.");
+        }
+
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            Debug.LogError("Rigidbody2D component is missing on the GameObject.");
+        }
+
     }
 
 
@@ -38,12 +54,30 @@ public class Breakable : MonoBehaviour
         }
         else
         {
+            if (hitSound != null)
+            {
+                audioSource.PlayOneShot(hitSound);
+            }
+            else
+            {
+                Debug.LogError("Hit sound not assigned.");
+            }
             animator.SetTrigger("hit");
         }
     }
-    
+
     private void Break()
     {
+        if (breakSound != null)
+        {
+            audioSource.PlayOneShot(breakSound);
+        }
+        else
+        {
+            Debug.LogError("Break sound not assigned.");
+        }
         animator.SetTrigger("break");
+        collider.enabled = false;
+        // Disable the collider to prevent further interactions
     }
 }
