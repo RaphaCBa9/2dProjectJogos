@@ -21,10 +21,34 @@ public class ShotMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy")) {
+        if (collision.CompareTag("Enemy"))
+        {
             EnemyBase e = collision.GetComponent<EnemyBase>();
             e.TakeDamage(damage);
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Breakable"))
+        {
+            Breakable b = collision.GetComponent<Breakable>();
+            b.TakeDamage();
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            try
+            {
+                skeletonBossScript b = collision.gameObject.GetComponent<skeletonBossScript>();
+                b.takeDamage(damage);
+            }
+            catch (System.Exception ex)
+            {
+                Debug.Log("Error while trying to deal damage to the boss: " + ex.Message);
+            }
+            finally
+            {
+                skeletonBossScript2 b = collision.gameObject.GetComponent<skeletonBossScript2>();
+                b.takeDamage(damage);
+            }
+        }
+        
     }
 }
