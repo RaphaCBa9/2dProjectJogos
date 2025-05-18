@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GoblinBoss : MonoBehaviour
 {
-    private float attackCooldown = 3.0f;
+    private float attackCooldown = 5.0f;
     private float attackTimer = 0.0f;
 
     private Animator animator;
@@ -151,6 +151,7 @@ public class GoblinBoss : MonoBehaviour
 
     private void LaunchProjectile(GameObject prefab)
     {
+        lastKnownPlayerDirection = (player.transform.position - transform.position).normalized;
         Vector2 spawnPos = transform.position;
         Vector2 direction = lastKnownPlayerDirection.normalized;
 
