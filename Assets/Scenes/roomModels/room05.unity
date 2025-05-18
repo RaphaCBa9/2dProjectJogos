@@ -2838,7 +2838,7 @@ GameObject:
   - component: {fileID: 1718273153}
   - component: {fileID: 1718273157}
   - component: {fileID: 1718273156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: unwalkable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
