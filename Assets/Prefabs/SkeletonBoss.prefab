@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2280779218784395919}
   - component: {fileID: 2084473009855934936}
   - component: {fileID: 8820544209753597021}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SkeletonBoss
   m_TagString: Boss
   m_Icon: {fileID: 0}

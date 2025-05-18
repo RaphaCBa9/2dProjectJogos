@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5384927536937485153}
   - component: {fileID: 4062243846095425827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 8394291206757774232}
   - component: {fileID: 8375414693807399124}
   - component: {fileID: 3123910380944244956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemySlime1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
