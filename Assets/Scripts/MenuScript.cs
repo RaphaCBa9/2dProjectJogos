@@ -8,6 +8,12 @@ public class MenuScript : MonoBehaviour
     public void ChooseCharacter()
     {
         SceneManager.LoadSceneAsync("PlayerSelect");
+
+        GameObject gm = GameObject.FindGameObjectWithTag("GameManager");
+        if (gm)
+        {
+            Destroy(gm);
+        }
     }
 
     public void GoToMenu()

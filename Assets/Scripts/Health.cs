@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
@@ -27,8 +28,9 @@ public class Health : MonoBehaviour
     public void TomarDano(float dano) {
         healthPoints -= dano;
 
-        if (healthPoints <= 0) {
-            gameOverPanel.SetActive(true);
+        if (healthPoints <= 0)
+        {
+            SceneManager.LoadSceneAsync("GameOver");
         }
 
         HandleMudarSlider(healthPoints);

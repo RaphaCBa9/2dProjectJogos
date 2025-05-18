@@ -37,8 +37,6 @@ public class PlayerMovement : MonoBehaviour
         Health h = GetComponent<Health>();
         h.slider = GameObject.FindGameObjectWithTag("SliderVidaUI").GetComponent<Slider>();
         h.healthTxt = GameObject.FindGameObjectWithTag("TextoVidaUI").GetComponent<TMP_Text>();
-        h.gameOverPanel = GameObject.FindGameObjectWithTag("GameOverPanelUI");
-        h.gameOverPanel.SetActive(false);
         h.slider.maxValue = h.maxHealthPoints;
         h.HandleMudarSlider(h.maxHealthPoints);
         speed = maxSpeed;

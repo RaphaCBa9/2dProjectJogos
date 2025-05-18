@@ -47,6 +47,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/roomModels/room08.unity
     guid: 8ea3f85c48e7b9640ba17989dda62fd6
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a84e4df8e430bdd48aa8bc97d4251b42
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
