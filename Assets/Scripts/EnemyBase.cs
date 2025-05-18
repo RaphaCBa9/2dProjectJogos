@@ -98,7 +98,7 @@ public abstract class EnemyBase : MonoBehaviour
         isAttacking = false;
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
     {
         currentHealth -= amount;
 
