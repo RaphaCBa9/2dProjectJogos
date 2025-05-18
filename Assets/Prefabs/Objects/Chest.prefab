@@ -331,6 +331,7 @@ MonoBehaviour:
   interactionRange: {fileID: 0}
   canInteract: 0
   openSound: {fileID: 0}
+  powerUpPrefab: {fileID: 5947875618919185301, guid: 9031f7ab4568fe94a89f26a899887f98, type: 3}
 --- !u!61 &7596271088029405087
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class chestScript : MonoBehaviour
 
     public AudioSource openSound;
 
+    [SerializeField] private GameObject powerUpPrefab;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -96,6 +98,9 @@ public class chestScript : MonoBehaviour
                     Debug.LogError("eKeyHover object not found in the scene.");
                 }
 
+                GameObject powerUp = Instantiate(powerUpPrefab, new Vector2(transform.position.x, transform.position.y - 1f), Quaternion.identity);
+                Collectable powerUpScript = powerUp.GetComponent<Collectable>();
+                powerUpScript.coletavelIndex = Random.Range(0, powerUpScript.possibleCollectables.Count);
             }
         }
 
