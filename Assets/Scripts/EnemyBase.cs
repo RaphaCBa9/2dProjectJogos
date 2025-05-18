@@ -45,9 +45,10 @@ public abstract class EnemyBase : MonoBehaviour
             anim.SetFloat("moveY", 0f);
             anim.SetFloat("moveMagnitude", 0f);
         }
-
-        if (distance > attackRange)
+        else
         {
+            if (distance > attackRange)
+            {
             isAttacking = false;
             Vector2 direction = (player.position - transform.position).normalized;
             transform.position += (Vector3)(currentSpeed * Time.deltaTime * direction);
@@ -78,6 +79,8 @@ public abstract class EnemyBase : MonoBehaviour
                 lastAttackTime = Time.time;
             }
         }
+        }
+
     }
 
     public void AttackCaller()
@@ -99,22 +102,53 @@ public abstract class EnemyBase : MonoBehaviour
     {
         currentHealth -= amount;
 
-        // Interrompe a anima��o de ataque, se estiver em execu��o
-        anim.ResetTrigger("attack");
         isAttacking = false;
         currentSpeed = maxSpeed;
-
-        // Toca a anima��o de dano imediatamente
-        anim.SetTrigger("takeDamage");
 
         if (currentHealth <= 0)
         {
             Die();
         }
+        else
+        {
+            anim.SetTrigger("takeDamage");
+        }
+            
+    }
+
+    public void DisableCollider()
+    {
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = false;
+        }
+    }
+
+    public void EnableCollider()
+    {
+        Collider2D[] colliders = GetComponents<Collider2D>();
+        foreach (var col in colliders)
+        {
+            col.enabled = true;
+        }
+    }
+
+    private System.Collections.IEnumerator MarkAsRemovedLater(string enemyName)
+    {
+        yield return new WaitForSeconds(1f); // Espera a animação terminar
+
+        GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
+        if (roomManager != null)
+        {
+            RoomManager rm = roomManager.GetComponent<RoomManager>();
+            string currentRoom = SceneManager.GetSceneAt(1).name;
+            rm.roomObjects[currentRoom].Add(enemyName, false);
+        }
     }
 
 
-protected virtual void Die()
+    protected virtual void Die()
 {
     if (isDead) return;
 
@@ -125,7 +159,6 @@ protected virtual void Die()
     anim.SetFloat("moveMagnitude", 0f);
     anim.SetBool("isDead", true);
 
-    // Desabilita colisores
     Collider2D[] colliders = GetComponents<Collider2D>();
     foreach (var col in colliders)
     {
@@ -139,13 +172,10 @@ protected virtual void Die()
         rb.bodyType = RigidbodyType2D.Static;
     }
 
-    GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
-    RoomManager rm = roomManager.GetComponent<RoomManager>();
-    string currentRoom = SceneManager.GetSceneAt(1).name;
-    rm.roomObjects[currentRoom].Add(gameObject.name, false);
+     StartCoroutine(MarkAsRemovedLater(gameObject.name));
+     Destroy(gameObject, .85f); // Destroi após 1 segundo (tempo da animação de morte)
 
-    Destroy(gameObject, 1f); // Destroi ap�s 1 segundo (anima��o de morte)
-}
+    }
 
     protected abstract System.Collections.IEnumerator PerformDelayedAttack();
 }
