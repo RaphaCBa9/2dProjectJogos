@@ -40,18 +40,35 @@ public class skeletonBossScript2 : MonoBehaviour
         }
     }
 
-    void Update()
+void Update()
     {
-        if (isDead) return;
-
-        distanceFromPlayer = Vector3.Distance(player.transform.position, transform.position);
-
-        if (distanceFromPlayer < 7f)
+        if (isDead)
         {
+            return;
+        }
+
+        distanceFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
+
+        if (distanceFromPlayer < 50f)
+        {
+
             if (attackTimer <= 0.0f)
             {
-                attackType = chooseAttack();
-                attackTimer = attackCooldown;
+
+
+                if (distanceFromPlayer < 2f)
+                {
+                    attackType = chooseAttack();
+                    attackTimer = attackCooldown;
+                }
+                else
+                {
+                    attackType = 2;
+                    attackTimer = attackCooldown;
+                }
+
+
+
 
                 if (attackType == 0)
                 {
@@ -66,15 +83,17 @@ public class skeletonBossScript2 : MonoBehaviour
                     animator.SetTrigger("attackSpecial");
                 }
 
+                // Reset attack type after attacking
                 attackType = -1;
+
             }
             else
             {
                 attackTimer -= Time.deltaTime;
             }
-
             followPlayer();
             updateAnimation();
+
         }
         else
         {
@@ -82,6 +101,7 @@ public class skeletonBossScript2 : MonoBehaviour
             animator.SetFloat("moveY", 0);
             animator.SetFloat("moveMagnitude", 0);
         }
+
     }
 
     private void followPlayer()
@@ -133,7 +153,7 @@ public class skeletonBossScript2 : MonoBehaviour
         }
     }
 
-    // Animation Events — chame dentro das animações
+    // Animation Events ï¿½ chame dentro das animaï¿½ï¿½es
     public void DisableCollider()
     {
         if (bossCollider != null)
