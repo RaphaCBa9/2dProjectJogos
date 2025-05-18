@@ -82,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
                 BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
                 bm.boss1CanSpawn = true;
                 bm.timePassed = Time.time;
+                canUsePortalLobby = false;
             }
             lastInteraction = Time.time;
         }
