@@ -332,6 +332,12 @@ MonoBehaviour:
   canInteract: 0
   openSound: {fileID: 0}
   powerUpPrefab: {fileID: 5947875618919185301, guid: 9031f7ab4568fe94a89f26a899887f98, type: 3}
+  possibleCollectablesImages: []
+  spriteCollectable1: {fileID: -2450620828767904024, guid: a4b9e8bc423ddf349ad9b3351d3b3f7a, type: 3}
+  spriteCollectable2: {fileID: -643155695631858169, guid: a4b9e8bc423ddf349ad9b3351d3b3f7a, type: 3}
+  spriteCollectable3: {fileID: -1126018869, guid: a4b9e8bc423ddf349ad9b3351d3b3f7a, type: 3}
+  spriteCollectable4: {fileID: -1494803529, guid: a4b9e8bc423ddf349ad9b3351d3b3f7a, type: 3}
+  spriteCollectable5: {fileID: -1494803529, guid: a4b9e8bc423ddf349ad9b3351d3b3f7a, type: 3}
 --- !u!61 &7596271088029405087
 BoxCollider2D:
   m_ObjectHideFlags: 0
