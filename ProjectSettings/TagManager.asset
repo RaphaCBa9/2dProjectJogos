@@ -16,6 +16,7 @@ TagManager:
   - PortalLobby
   - Boss
   - BossManager
+  - Breakable
   layers:
   - Default
   - TransparentFX

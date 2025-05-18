@@ -43,19 +43,20 @@ public class skeletonBossScript : MonoBehaviour
 
         distanceFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
 
-        if (distanceFromPlayer < 10f)
+        if (distanceFromPlayer < 50f)
         {
-            if (distanceFromPlayer < 3f)
+            if (attackTimer <= 0.0f)
             {
 
-                if (attackTimer <= 0.0f)
+                if (distanceFromPlayer < 3f)
                 {
                     attackType = chooseAttack();
                     attackTimer = attackCooldown;
                 }
                 else
                 {
-                    attackTimer -= Time.deltaTime;
+                    attackType = 2;
+                    attackTimer = attackCooldown;
                 }
 
 
@@ -130,7 +131,7 @@ public class skeletonBossScript : MonoBehaviour
     {
         // choose seed based on time
         System.Random rand = new System.Random(System.DateTime.Now.Millisecond);
-        int attackType = Random.Range(0, 3); // Randomly choose an attack type (0, 1, or 2)
+        int attackType = Random.Range(0, 2); // Randomly choose an attack type (0, 1, or 2)
         return attackType;
     }
 
