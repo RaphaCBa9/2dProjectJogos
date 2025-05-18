@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class skeletonBossScript2 : MonoBehaviour
+public class GoblinBoss : MonoBehaviour
 {
     private float attackCooldown = 3.0f;
     private float attackTimer = 0.0f;
@@ -23,6 +23,14 @@ public class skeletonBossScript2 : MonoBehaviour
     public float distanceFromPlayer = 1000f;
 
     private Collider2D bossCollider;
+    private Vector2 lastKnownPlayerDirection = Vector2.right;
+
+
+    // Prefabs diferentes para cada ataque
+    public GameObject projectileAttack2Prefab;
+    public GameObject projectileSpecialPrefab;
+
+    public float projectileSpeed = 5f;
 
     void Start()
     {
@@ -40,56 +48,40 @@ public class skeletonBossScript2 : MonoBehaviour
         }
     }
 
-void Update()
+    void Update()
     {
-        if (isDead)
+        if (isDead) return;
+
+        distanceFromPlayer = Vector3.Distance(player.transform.position, transform.position);
+
+        if (attackTimer <= 0.0f)
         {
-            return;
-        }
+            lastKnownPlayerDirection = (player.transform.position - transform.position).normalized;
+            attackType = Random.Range(0, 3); // 0, 1 ou 2 aleatório
+            attackTimer = attackCooldown;
 
-        distanceFromPlayer = Vector3.Distance(player.transform.position, this.transform.position);
-
-        if (distanceFromPlayer < 50f)
-        {
-
-            if (attackTimer <= 0.0f)
+            switch (attackType)
             {
-
-                attackType = chooseAttack();
-                attackTimer = attackCooldown;
-
-                if (attackType == 0)
-                {
+                case 0:
                     animator.SetTrigger("attack1");
-                }
-                else if (attackType == 1)
-                {
+                    break;
+                case 1:
                     animator.SetTrigger("attack2");
-                }
-                else if (attackType == 2)
-                {
+                    break;
+                case 2:
                     animator.SetTrigger("attackSpecial");
-                }
-
-                // Reset attack type after attacking
-                attackType = -1;
-
+                    break;
             }
-            else
-            {
-                attackTimer -= Time.deltaTime;
-            }
-            followPlayer();
-            updateAnimation();
 
+            attackType = -1;
         }
         else
         {
-            animator.SetFloat("moveX", 0);
-            animator.SetFloat("moveY", 0);
-            animator.SetFloat("moveMagnitude", 0);
+            attackTimer -= Time.deltaTime;
         }
 
+        followPlayer();
+        updateAnimation();
     }
 
     private void followPlayer()
@@ -129,19 +121,6 @@ void Update()
         }
     }
 
-    private int chooseAttack()
-    {
-        if (distanceFromPlayer < 3f)
-        {
-            return Random.Range(0, 2); // attack1 ou attack2
-        }
-        else
-        {
-            return 2; // attackSpecial
-        }
-    }
-
-    // Animation Events ï¿½ chame dentro das animaï¿½ï¿½es
     public void DisableCollider()
     {
         if (bossCollider != null)
@@ -157,4 +136,35 @@ void Update()
             bossCollider.enabled = true;
         }
     }
+
+    // Animation Event para o ataque 2
+    public void LaunchProjectileAttack2()
+    {
+        LaunchProjectile(projectileAttack2Prefab);
+    }
+
+    // Animation Event para o ataque especial
+    public void LaunchProjectileSpecial()
+    {
+        LaunchProjectile(projectileSpecialPrefab);
+    }
+
+    private void LaunchProjectile(GameObject prefab)
+    {
+        Vector2 spawnPos = transform.position;
+        Vector2 direction = lastKnownPlayerDirection.normalized;
+
+        GameObject projectile = Instantiate(prefab, spawnPos, Quaternion.identity);
+
+        // Rotaciona o projétil para apontar na direção do movimento
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.linearVelocity = direction * 5f; // ajuste a velocidade conforme necessário
+        }
+    }
+
 }
