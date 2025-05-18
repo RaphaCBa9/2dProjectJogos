@@ -16,23 +16,27 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (collision.CompareTag("Boss"))
         {
+            Debug.Log("Hit a boss");
             // Tenta causar dano em qualquer tipo de boss existente
-            var boss1 = collision.gameObject.GetComponent<skeletonBossScript>();
+            skeletonBossScript boss1 = collision.gameObject.GetComponent<skeletonBossScript>();
             if (boss1 != null)
             {
                 boss1.takeDamage(meleeDamage);
+                return; // Se o boss1 for encontrado, não tenta o boss2
             }
 
-            var boss2 = collision.gameObject.GetComponent<skeletonBossScript2>();
+            skeletonBossScript2 boss2 = collision.gameObject.GetComponent<skeletonBossScript2>();
             if (boss2 != null)
             {
                 boss2.takeDamage(meleeDamage);
+                return; // Se o boss2 for encontrado, não tenta o goblin
             }
 
-            var goblinBoss = collision.gameObject.GetComponent<GoblinBoss>();
+            GoblinBoss goblinBoss = collision.gameObject.GetComponent<GoblinBoss>();
             if (goblinBoss != null)
             {
                 goblinBoss.takeDamage(meleeDamage);
+                return; // Se o goblinBoss for encontrado, não tenta o boss1 ou boss2
             }
         }
         else if (collision.CompareTag("Breakable"))

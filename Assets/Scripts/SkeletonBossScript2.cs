@@ -112,6 +112,7 @@ void Update()
 
     public void takeDamage(int damage)
     {
+        Debug.Log("Taking damage: " + damage);
         if (isDead) return;
 
         health -= damage;
