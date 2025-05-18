@@ -228,10 +228,10 @@ MonoBehaviour:
   bossAproachingIcon2quarto: {fileID: 5613424851114667450, guid: ee2e2077c5c5c714aa46b6b7db3e1179, type: 3}
   bossAproachingIcon3quarto: {fileID: -6394459255467369752, guid: 0eae56a3e8e9586429906a24cc9474d0, type: 3}
   bossAproachingIcon4quarto: {fileID: 5132276888542391536, guid: 07e6ac2af011b4147949178540901e86, type: 3}
-  timeToSpawnBoss1: 90
+  timeToSpawnBoss1: 10
   timePassed: 0
   boss1CanSpawn: 0
-  boss1Prefab: {fileID: 1205271247170005234, guid: 90fd777a276d3c64a917286363b8f886, type: 3}
+  boss1Prefab: {fileID: 310741120468378633, guid: 7b5425751e97c194aa74ac9fda8461b8, type: 3}
 --- !u!4 &81201820
 Transform:
   m_ObjectHideFlags: 0

@@ -38,6 +38,8 @@ public class GoblinBoss : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         bossCollider = GetComponent<Collider2D>();
 
+        bossCollider.enabled = true;
+
         if (player == null)
         {
             Debug.LogError("Player not found in the scene.");
@@ -57,7 +59,7 @@ public class GoblinBoss : MonoBehaviour
         if (attackTimer <= 0.0f)
         {
             lastKnownPlayerDirection = (player.transform.position - transform.position).normalized;
-            attackType = Random.Range(0, 3); // 0, 1 ou 2 aleatório
+            attackType = Random.Range(0, 3); // 0, 1 ou 2 aleatï¿½rio
             attackTimer = attackCooldown;
 
             switch (attackType)
@@ -123,6 +125,7 @@ public class GoblinBoss : MonoBehaviour
 
     public void DisableCollider()
     {
+        Debug.Log("Disabling collider");
         if (bossCollider != null)
         {
             bossCollider.enabled = false;
@@ -131,6 +134,7 @@ public class GoblinBoss : MonoBehaviour
 
     public void EnableCollider()
     {
+        Debug.Log("Enabling collider");
         if (bossCollider != null)
         {
             bossCollider.enabled = true;
@@ -157,14 +161,14 @@ public class GoblinBoss : MonoBehaviour
 
         GameObject projectile = Instantiate(prefab, spawnPos, Quaternion.identity);
 
-        // Rotaciona o projétil para apontar na direção do movimento
+        // Rotaciona o projï¿½til para apontar na direï¿½ï¿½o do movimento
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = direction * 5f; // ajuste a velocidade conforme necessário
+            rb.linearVelocity = direction * 5f; // ajuste a velocidade conforme necessï¿½rio
         }
     }
 
