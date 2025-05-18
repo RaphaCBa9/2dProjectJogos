@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -79,6 +80,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
                 SceneManager.LoadSceneAsync("inicial", LoadSceneMode.Additive);
+
+                Light2D l = GetComponentInChildren<Light2D>();
+                l.enabled = true;
+
                 BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
                 bm.boss1CanSpawn = true;
                 bm.timePassed = Time.time;
