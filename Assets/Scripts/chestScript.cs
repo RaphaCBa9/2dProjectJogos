@@ -12,6 +12,8 @@ public class chestScript : MonoBehaviour
 
     public bool canInteract = false;
 
+    public AudioSource openSound;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -25,6 +27,12 @@ public class chestScript : MonoBehaviour
         interactionRange.isTrigger = true;
 
         rb = GetComponent<Rigidbody2D>();
+
+        openSound = GetComponent<AudioSource>();
+        if (openSound == null)
+        {
+            Debug.LogError("Open sound not assigned.");
+        }
 
 
         animator = GetComponent<Animator>();
@@ -51,8 +59,19 @@ public class chestScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if (openSound != null)
+                {
+                    openSound.Play();
+                }
+                else
+                {
+                    Debug.LogError("Open sound not assigned.");
+                }
                 Debug.Log("Player interacted with the chest.");
                 animator.SetTrigger("open");
+
+                // Disable the collider to prevent further interactions
+                interactionRange.enabled = false;
             }
         }
 
