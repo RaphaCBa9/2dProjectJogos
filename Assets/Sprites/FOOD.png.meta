@@ -241,6 +241,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1247,7 +1273,52 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FOOD_0: -705928695079096541
+      FOOD_1: -7875724607004690188
+      FOOD_10: -2640009624761344163
+      FOOD_11: -2071745192231504002
+      FOOD_12: -5738907014551038253
+      FOOD_13: -7580664496976150915
+      FOOD_14: -7192537465514553594
+      FOOD_15: -8821912749043328814
+      FOOD_16: -8252647808990147948
+      FOOD_17: 2759180533707099908
+      FOOD_18: -7159108135149215288
+      FOOD_19: 1979078944577792003
+      FOOD_2: -2263599746679871752
+      FOOD_20: -8119362380895063553
+      FOOD_21: -4487077923464245120
+      FOOD_22: 2489281385731691582
+      FOOD_23: 1025800472234933337
+      FOOD_24: 812287596606193663
+      FOOD_25: -8845766372752907215
+      FOOD_26: 924763666790897972
+      FOOD_27: 146139251753726943
+      FOOD_28: -5908788718081362834
+      FOOD_29: -5684655635847894442
+      FOOD_3: 7200609847113176276
+      FOOD_30: 8927372731639667514
+      FOOD_31: -8756760142303832953
+      FOOD_32: 6961118062738545332
+      FOOD_33: -3666040229479703549
+      FOOD_34: -8835716591812628959
+      FOOD_35: -8128374963979090102
+      FOOD_36: 389589038446783522
+      FOOD_37: -3020633662044402863
+      FOOD_38: -5807055776411694259
+      FOOD_39: 5907315241506798931
+      FOOD_4: 7438869448932923640
+      FOOD_40: 2478599741992896902
+      FOOD_41: -2371409947565510977
+      FOOD_42: 6386899707753298127
+      FOOD_43: -1210367348704537790
+      FOOD_44: 3076252984565357144
+      FOOD_5: 2774902277386097377
+      FOOD_6: 3839730058893784818
+      FOOD_7: 7347509266079315615
+      FOOD_8: -1701983073107220316
+      FOOD_9: 6166779947649321431
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
