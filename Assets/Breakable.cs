@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Breakable : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class Breakable : MonoBehaviour
     public Animator animator;
 
     public Collider2D collider;
-    
+
     public Rigidbody2D rb;
 
     public AudioClip breakSound;
@@ -79,5 +80,20 @@ public class Breakable : MonoBehaviour
         animator.SetTrigger("break");
         collider.enabled = false;
         // Disable the collider to prevent further interactions
+
+        StartCoroutine(MarkAsRemovedLater());
+    }
+    
+    private System.Collections.IEnumerator MarkAsRemovedLater()
+    {
+        yield return new WaitForSeconds(0.84f); // Espera a animação terminar
+
+        GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
+        if (roomManager != null)
+        {
+            RoomManager rm = roomManager.GetComponent<RoomManager>();
+            string currentRoom = SceneManager.GetSceneAt(1).name;
+            rm.roomObjects[currentRoom].Add(gameObject.name, false);
+        }
     }
 }

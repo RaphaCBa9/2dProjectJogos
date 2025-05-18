@@ -31,6 +31,7 @@ public class ShotMovement : MonoBehaviour
         {
             Breakable b = collision.GetComponent<Breakable>();
             b.TakeDamage();
+            Destroy(gameObject);
         }
         if (collision.CompareTag("Boss"))
         {
@@ -38,6 +39,7 @@ public class ShotMovement : MonoBehaviour
             {
                 skeletonBossScript b = collision.gameObject.GetComponent<skeletonBossScript>();
                 b.takeDamage(damage);
+                Destroy(gameObject);
             }
             catch (System.Exception ex)
             {
@@ -47,6 +49,7 @@ public class ShotMovement : MonoBehaviour
             {
                 skeletonBossScript2 b = collision.gameObject.GetComponent<skeletonBossScript2>();
                 b.takeDamage(damage);
+                Destroy(gameObject);
             }
         }
         
