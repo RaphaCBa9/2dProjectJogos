@@ -223,6 +223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de7089272371f5c44bfac4c9af55dd71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  musicManager: {fileID: 0}
+  bossMusicSource: {fileID: 0}
+  bossMusic: {fileID: 8300000, guid: 5bc04020f38e64b4999580196ef84583, type: 3}
   imageToChange: {fileID: 312620628}
   bossAproachingIcon1quarto: {fileID: 5280016744796449434, guid: 2c7ec356e73ad30458fc40fd40cc1324, type: 3}
   bossAproachingIcon2quarto: {fileID: 5613424851114667450, guid: ee2e2077c5c5c714aa46b6b7db3e1179, type: 3}
