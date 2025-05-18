@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class ZombieBehavior : EnemyBase
 {
@@ -23,7 +24,7 @@ public class ZombieBehavior : EnemyBase
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        // Ataque: só dispara se dentro do alcance, cooldown ok e não estiver atacando
+        // Ataque: sï¿½ dispara se dentro do alcance, cooldown ok e nï¿½o estiver atacando
         if (!isAttacking && distanceToPlayer <= attackRange && Time.time - lastAttackTime >= attackCooldown)
         {
             lastAttackTime = Time.time;
@@ -36,11 +37,11 @@ public class ZombieBehavior : EnemyBase
             anim.SetFloat("moveMagnitude", lockedAnimDirection.magnitude);
 
             anim.SetTrigger("attack");
-            currentSpeed = 0f; // para de se mover só durante o ataque
-            return; // garante que ele não ande nesse frame
+            currentSpeed = 0f; // para de se mover sï¿½ durante o ataque
+            return; // garante que ele nï¿½o ande nesse frame
         }
 
-        // Movimento: continua seguindo o jogador se não estiver atacando
+        // Movimento: continua seguindo o jogador se nï¿½o estiver atacando
         if (!isAttacking)
         {
             Vector2 direction = (player.position - transform.position).normalized;
@@ -51,7 +52,7 @@ public class ZombieBehavior : EnemyBase
             anim.SetFloat("moveMagnitude", direction.magnitude);
         }
 
-        // Rastro tóxico
+        // Rastro tï¿½xico
         if (Time.time - lastTrailTime >= trailSpawnInterval)
         {
             SpawnTrail();
@@ -71,12 +72,13 @@ public class ZombieBehavior : EnemyBase
             audioSource.PlayOneShot(shootSound);
         }
 
-        // Cria projétil
+        // Cria projï¿½til
         if (projectilePrefab != null)
         {
             Vector2 shootPosition = (Vector2)transform.position + lockedAttackDirection * 0.5f;
             GameObject proj = Instantiate(projectilePrefab, shootPosition, Quaternion.identity);
-            Debug.Log("Criou projétil");
+            SceneManager.MoveGameObjectToScene(proj, SceneManager.GetSceneAt(1));
+            Debug.Log("Criou projï¿½til");
 
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -94,6 +96,7 @@ public class ZombieBehavior : EnemyBase
         if (trailPrefab != null)
         {
             Instantiate(trailPrefab, transform.position, Quaternion.identity);
+            SceneManager.MoveGameObjectToScene(trailPrefab, SceneManager.GetSceneAt(1));
         }
     }
 

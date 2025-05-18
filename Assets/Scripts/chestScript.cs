@@ -95,6 +95,7 @@ public class chestScript : MonoBehaviour
                 }
 
                 GameObject powerUp = Instantiate(powerUpPrefab, new Vector2(transform.position.x, transform.position.y - 1f), Quaternion.identity);
+                SceneManager.MoveGameObjectToScene(powerUp, SceneManager.GetSceneAt(1));
                 Collectable powerUpScript = powerUp.GetComponent<Collectable>();
                 powerUpScript.coletavelIndex = Random.Range(0, powerUpScript.possibleCollectables.Count);
                 powerUp.GetComponent<SpriteRenderer>().sprite = possibleCollectablesImages[powerUpScript.coletavelIndex];

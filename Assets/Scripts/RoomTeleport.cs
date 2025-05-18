@@ -21,11 +21,11 @@ public class RoomTeleport : MonoBehaviour
 
             collision.transform.position = posititionToTeleport;
 
-            GameObject[] zombieTrails = GameObject.FindGameObjectsWithTag("ZombieTrail");
-            foreach (GameObject obj in zombieTrails)
-            {
-                obj.SetActive(false);
-            }
+            // GameObject[] zombieTrails = GameObject.FindGameObjectsWithTag("ZombieTrail");
+            // foreach (GameObject obj in zombieTrails)
+            // {
+            //     obj.SetActive(false);
+            // }
         }
     }
 

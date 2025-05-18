@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShooterPlantBehaviour : EnemyBase
 {
@@ -75,6 +76,7 @@ public class ShooterPlantBehaviour : EnemyBase
         {
             Vector2 shootPosition = (Vector2)transform.position + lockedAttackDirection * 0.5f;
             GameObject proj = Instantiate(projectilePrefab, shootPosition, Quaternion.identity);
+            SceneManager.MoveGameObjectToScene(proj, SceneManager.GetSceneAt(1));
 
             Rigidbody2D rb = proj.GetComponent<Rigidbody2D>();
             if (rb != null)
