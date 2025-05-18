@@ -3,9 +3,17 @@ using UnityEngine;
 public class PlayerSkeletonAttack : MonoBehaviour
 {
     [SerializeField] private GameObject arrowPrefab;
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();       
+    }
 
     void Shoot()
     {
+        audioSource.Play();
+        
         PlayerMovement pm = GetComponent<PlayerMovement>();
         Vector2 attackDir = pm.movement;
         if (attackDir.Equals(Vector2.zero))
@@ -34,7 +42,7 @@ public class PlayerSkeletonAttack : MonoBehaviour
         {
             attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 45f));
         }
-        else if (attackDir.Equals(- Vector2.one))
+        else if (attackDir.Equals(-Vector2.one))
         {
             attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 225f));
         }
@@ -46,7 +54,6 @@ public class PlayerSkeletonAttack : MonoBehaviour
         {
             attackRotation = Quaternion.Euler(new Vector3(0f, 0f, 315f));
         }
-
 
         GameObject arrow = Instantiate(arrowPrefab, transform.position, attackRotation);
         arrow.GetComponent<ShotMovement>().moveDir = attackDir;
