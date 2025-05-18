@@ -136,7 +136,7 @@ public abstract class EnemyBase : MonoBehaviour
 
     private System.Collections.IEnumerator MarkAsRemovedLater(string enemyName)
     {
-        yield return new WaitForSeconds(1f); // Espera a animação terminar
+        yield return new WaitForSeconds(0.84f); // Espera a animação terminar
 
         GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
         if (roomManager != null)
