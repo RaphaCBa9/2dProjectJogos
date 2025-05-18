@@ -7,7 +7,7 @@ public class ShooterPlantBehaviour : EnemyBase
     public float retreatRange = 6f;
 
     private AudioClip shootSound;
-
+    private bool atacando = false;
     protected override void Start()
     {
         base.Start();
@@ -21,23 +21,10 @@ public class ShooterPlantBehaviour : EnemyBase
         float distance = Vector2.Distance(transform.position, player.position);
         Vector2 directionToPlayer = (player.position - transform.position).normalized;
 
-        if (distance < retreatRange)
-        {
-            Vector2 retreatDir = -directionToPlayer;
-            transform.position += (Vector3)(currentSpeed * Time.deltaTime * retreatDir);
-
-            anim.SetFloat("moveX", retreatDir.x);
-            anim.SetFloat("moveY", retreatDir.y);
-            anim.SetFloat("moveMagnitude", retreatDir.magnitude);
-        }
-        else
-        {
-            anim.SetFloat("moveMagnitude", 0f);
-        }
-
         if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
         {
-            // isAttacking = true;
+            //isAttacking = true;
+            atacando = true;
             lockedAttackDirection = directionToPlayer;
             lockedAnimDirection = directionToPlayer;
 
@@ -48,6 +35,33 @@ public class ShooterPlantBehaviour : EnemyBase
             currentSpeed = 0f;
             lastAttackTime = Time.time;
         }
+        else
+        {
+            if (atacando)
+            {
+                lockedAnimDirection = directionToPlayer;
+                anim.SetFloat("moveX", lockedAnimDirection.x);
+                anim.SetFloat("moveY", lockedAnimDirection.y);
+                currentSpeed = 0f;
+            }
+            else
+            {
+                if (distance < retreatRange)
+                {
+                    Vector2 retreatDir = -directionToPlayer;
+                    transform.position += (Vector3)(currentSpeed * Time.deltaTime * retreatDir);
+
+                    anim.SetFloat("moveX", retreatDir.x);
+                    anim.SetFloat("moveY", retreatDir.y);
+                    anim.SetFloat("moveMagnitude", retreatDir.magnitude);
+                }
+                else
+                {
+                    anim.SetFloat("moveMagnitude", 0f);
+                }
+            }
+        }
+
     }
 
     protected override System.Collections.IEnumerator PerformDelayedAttack()
@@ -73,6 +87,7 @@ public class ShooterPlantBehaviour : EnemyBase
 
     override public void EndAttackAnimation()
     {
+        atacando = false;
         base.EndAttackAnimation();
     }
 }
