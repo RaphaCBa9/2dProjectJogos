@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GoblinBoss : MonoBehaviour
 {
-    private float attackCooldown = 5.0f;
+    private float attackCooldown = 4.0f;
     private float attackTimer = 0.0f;
 
     private Animator animator;

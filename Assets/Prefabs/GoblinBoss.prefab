@@ -200,8 +200,8 @@ MonoBehaviour:
   ySpeed: 0
   speedMagnitude: 0
   attackType: -1
-  health: 20
-  maxHealth: 20
+  health: 50
+  maxHealth: 50
   distanceFromPlayer: 1000
   projectileAttack2Prefab: {fileID: 263407297994268373, guid: d148a9b4b6a049d41b4585373d6eecd7, type: 3}
   projectileSpecialPrefab: {fileID: 1734380953835398614, guid: ab2b91bbe6e28704389841126bc58bb3, type: 3}
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!1 &4600210579524283323
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!1 &4782760660741919606
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!1 &8338871820242063849
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,4 +573,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15

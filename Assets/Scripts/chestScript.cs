@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class chestScript : MonoBehaviour
 {
@@ -101,6 +102,8 @@ public class chestScript : MonoBehaviour
                 {
                     powerUp.GetComponent<SpriteRenderer>().color = new Color(0f, 205f, 253f, 255f);
                 }
+
+                StartCoroutine(MarkAsRemovedLater());
             }
         }
     }
@@ -167,7 +170,7 @@ public class chestScript : MonoBehaviour
         }
 
     }
-    
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -184,6 +187,19 @@ public class chestScript : MonoBehaviour
             {
                 Debug.LogError("eKeyHover object not found in the scene.");
             }
+        }
+    }
+    
+    private System.Collections.IEnumerator MarkAsRemovedLater()
+    {
+        yield return new WaitForSeconds(0.84f); // Espera a animação terminar
+
+        GameObject roomManager = GameObject.FindGameObjectWithTag("RoomManager");
+        if (roomManager != null)
+        {
+            RoomManager rm = roomManager.GetComponent<RoomManager>();
+            string currentRoom = SceneManager.GetSceneAt(1).name;
+            rm.roomObjects[currentRoom].Add(gameObject.name, false);
         }
     }
 }

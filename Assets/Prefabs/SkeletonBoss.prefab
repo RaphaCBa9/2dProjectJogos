@@ -186,8 +186,8 @@ MonoBehaviour:
   ySpeed: 0
   speedMagnitude: 0
   attackType: -1
-  health: 20
-  maxHealth: 20
+  health: 50
+  maxHealth: 50
   distanceFromPlayer: 1000
 --- !u!1 &1393843896119762332
 GameObject:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!1 &3637357822760204466
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!1 &5962082743851892691
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!1 &6703796885733122254
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,4 +556,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
