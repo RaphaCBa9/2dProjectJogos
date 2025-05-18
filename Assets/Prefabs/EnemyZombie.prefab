@@ -209,10 +209,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1663f53f290e24e8d81deb87c9ca88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
+  maxSpeed: 1.8
   attackRange: 8
-  attackCooldown: 3
-  maxHealth: 3
+  attackCooldown: 2.5
+  maxHealth: 6
   meleeDamage: 5
   projectilePrefab: {fileID: 2976777444961882016, guid: aaa0fbd62c6ee6e4584b8ec640cb8733, type: 3}
   trailPrefab: {fileID: 5510135580795461052, guid: 6cec14ae469a7f44590f9c388d044bc5, type: 3}

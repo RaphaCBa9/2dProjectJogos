@@ -190,8 +190,8 @@ MonoBehaviour:
   ySpeed: 0
   speedMagnitude: 0
   attackType: -1
-  health: 20
-  maxHealth: 20
+  health: 50
+  maxHealth: 50
   distanceFromPlayer: 1000
 --- !u!1 &3004681651608620631
 GameObject:
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!61 &6894295115305546843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -330,7 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!61 &142130818790734308
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!61 &4974821398952144574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 15
 --- !u!61 &71458956777328856
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -642,4 +642,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfd45fa78b4dcbe469763455b0377c8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeDamage: 10
+  meleeDamage: 18

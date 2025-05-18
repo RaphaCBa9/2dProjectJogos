@@ -169,6 +169,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -647,7 +660,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DailyObjects_0: -5176534771709239582
+      DailyObjects_1: 1930274396800545625
+      DailyObjects_10: -6777331799953761148
+      DailyObjects_11: -2723501976959425346
+      DailyObjects_12: 5868414220804612684
+      DailyObjects_13: 3141725671403560390
+      DailyObjects_14: 2263764034154135772
+      DailyObjects_15: -4679971191868971838
+      DailyObjects_16: -4476782382886269103
+      DailyObjects_17: -5038595619833868400
+      DailyObjects_18: -1357166169718480631
+      DailyObjects_19: -622894155501952042
+      DailyObjects_2: -2425880061955992443
+      DailyObjects_20: -6698342908051984455
+      DailyObjects_3: 4814079006076832633
+      DailyObjects_4: -7207626305375593039
+      DailyObjects_5: -6579880235273410662
+      DailyObjects_6: -4817765615770719118
+      DailyObjects_7: 113873720422124651
+      DailyObjects_8: 1806545174184907196
+      DailyObjects_9: -397995141321038692
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

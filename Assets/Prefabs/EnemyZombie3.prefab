@@ -208,12 +208,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f1663f53f290e24e8d81deb87c9ca88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1.2
-  attackRange: 10
-  attackCooldown: 3
-  maxHealth: 3
+  maxSpeed: 2
+  attackRange: 12
+  attackCooldown: 2.5
+  maxHealth: 16
   meleeDamage: 5
   projectilePrefab: {fileID: 2976777444961882016, guid: 13788b4ec47e90647952da2f6b699364, type: 3}
   trailPrefab: {fileID: 5510135580795461052, guid: b3826de969e6925499259b31b465eb23, type: 3}
   shootSpeed: 8
-  trailSpawnInterval: 1
+  trailSpawnInterval: 0.5

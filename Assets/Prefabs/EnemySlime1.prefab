@@ -193,8 +193,8 @@ MonoBehaviour:
   maxSpeed: 2
   attackRange: 1.5
   attackCooldown: 2
-  maxHealth: 3
-  meleeDamage: 5
+  maxHealth: 4
+  meleeDamage: 4
 --- !u!60 &4104909730669660231
 PolygonCollider2D:
   m_ObjectHideFlags: 0

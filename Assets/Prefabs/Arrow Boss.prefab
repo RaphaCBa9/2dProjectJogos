@@ -177,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 5
-  damage: 15
+  damage: 18
 --- !u!1 &6359545409899465314
 GameObject:
   m_ObjectHideFlags: 0

@@ -212,7 +212,7 @@ MonoBehaviour:
   maxSpeed: 2
   attackRange: 1.5
   attackCooldown: 2
-  maxHealth: 3
+  maxHealth: 5
   meleeDamage: 5
 --- !u!82 &3966459716385822094
 AudioSource:
