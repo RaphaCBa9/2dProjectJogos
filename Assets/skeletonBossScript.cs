@@ -8,19 +8,27 @@ public class skeletonBossScript : MonoBehaviour
     private float attackTimer = 0.0f;
 
     private Animator animator;
-    public GameObject player;
+    private GameObject player;
     public float speed = 2.0f;
 
     public float xSpeed = 0.0f;
     public float ySpeed = 0.0f;
     public float speedMagnitude = 0.0f;
 
-    public int attackType = -1;
+    private int attackType = -1;
 
     public int health = 20;
     public int maxHealth = 20;
 
     private bool isDead = false;
+
+    public AudioClip attack1Sound;
+    public AudioClip attack2Sound;
+    public AudioClip attackSpecialSound;
+    public AudioClip takeDamageSound;
+
+    private AudioSource audioSource;
+
 
     public float distanceFromPlayer = 1000f;
     void Start()
@@ -31,11 +39,18 @@ public class skeletonBossScript : MonoBehaviour
         {
             Debug.LogError("Player not found in the scene.");
         }
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource not found on the boss.");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("distanceFromPlayer: " + distanceFromPlayer);
         if (isDead)
         {
             return;
@@ -65,19 +80,30 @@ public class skeletonBossScript : MonoBehaviour
                 if (attackType == 0)
                 {
                     animator.SetTrigger("attack1");
+                    audioSource.PlayOneShot(attack1Sound);
+
                 }
                 else if (attackType == 1)
                 {
                     animator.SetTrigger("attack2");
+                    audioSource.PlayOneShot(attack2Sound);
+                    audioSource.PlayOneShot(attack2Sound);
+                    audioSource.PlayOneShot(attack2Sound);
+
                 }
                 else if (attackType == 2)
                 {
                     animator.SetTrigger("attackSpecial");
+                    audioSource.PlayOneShot(attackSpecialSound);
                 }
 
                 // Reset attack type after attacking
                 attackType = -1;
 
+            }
+            else
+            {
+                attackTimer -= Time.deltaTime;
             }
             followPlayer();
             updateAnimation();

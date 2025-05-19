@@ -17,6 +17,7 @@ TagManager:
   - Boss
   - BossManager
   - Breakable
+  - audioinicial
   layers:
   - Default
   - TransparentFX

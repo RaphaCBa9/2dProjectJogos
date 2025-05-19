@@ -24,6 +24,11 @@ public class GameManager : MonoBehaviour
     {
         playerPrefabSelected = playerWizardPrefab;
         playerDeathAnimatorSelected = playerWizardDeathAnimator;
+        GameObject audio = GameObject.FindGameObjectWithTag("audioinicial");
+        if (audio)
+        {
+            Destroy(audio);
+        }
         PlayGame();
     }
 
@@ -31,6 +36,11 @@ public class GameManager : MonoBehaviour
     {
         playerPrefabSelected = playerSkeletonPrefab;
         playerDeathAnimatorSelected = playerSkeletonDeathAnimator;
+        GameObject audio = GameObject.FindGameObjectWithTag("audioinicial");
+        if (audio)
+        {
+            Destroy(audio);
+        }
         PlayGame();
     }
 
