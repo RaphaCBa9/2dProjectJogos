@@ -54,6 +54,36 @@ EditorBuildSettings:
     path: Assets/Scenes/roomModels/room10.unity
     guid: faa6df91451107445957c0a929bd6e25
   - enabled: 1
+    path: Assets/Scenes/roomModels/room11.unity
+    guid: 1f84f54b8bc73404da25b55d8906f957
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room12.unity
+    guid: 77fd98aeae001fc4b87f80e660b0d48d
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room13.unity
+    guid: 49c079403f5db32468c4b858ddf73112
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room14.unity
+    guid: 1340e88ee27d0004ba51d70a676d672c
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room15.unity
+    guid: 98b138a5d710149429b4a51288569c4d
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room16.unity
+    guid: 3b928cdfad0aea24594113d32c5227f2
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room17.unity
+    guid: 86e6ee1031a0fbd41a89e733cc2c973e
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room18.unity
+    guid: a5c327ee6fc67074aa9281ece271e63c
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room19.unity
+    guid: 8d8fc34492475db45b1080bdce285851
+  - enabled: 1
+    path: Assets/Scenes/roomModels/room20.unity
+    guid: d828ebf83d7919f44aea5891bda4d245
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: a84e4df8e430bdd48aa8bc97d4251b42
   - enabled: 1
