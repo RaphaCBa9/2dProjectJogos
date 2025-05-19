@@ -89,6 +89,9 @@ public class PlayerMovement : MonoBehaviour
                     bm.boss1CanSpawn = true;
                     bm.timePassed = Time.time;
                     bm.imageToChange.GetComponent<Image>().sprite = bm.bossAproachingIcon0quarto;
+
+                    Light2D l = GetComponentInChildren<Light2D>();
+                    l.enabled = true;
                 }
                 else
                 {
@@ -120,6 +123,9 @@ public class PlayerMovement : MonoBehaviour
                     Health h = GetComponent<Health>();
                     h.healthPoints = h.maxHealthPoints;
                     h.HandleMudarSlider(h.healthPoints);
+
+                    Light2D l = GetComponentInChildren<Light2D>();
+                    l.enabled = false;
                 }
 
                 if (bm.bossesKilled == 3)
@@ -131,9 +137,6 @@ public class PlayerMovement : MonoBehaviour
                     SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
                     SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
                 }
-
-                Light2D l = GetComponentInChildren<Light2D>();
-                l.enabled = true;
 
                 canUsePortalLobby = false;
             }
