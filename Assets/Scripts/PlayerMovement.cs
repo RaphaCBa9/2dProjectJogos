@@ -101,8 +101,15 @@ public class PlayerMovement : MonoBehaviour
                     h.HandleMudarSlider(h.healthPoints);
                 }
 
-                SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
-                SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+                if (bm.bossesKilled == 3)
+                {
+                    SceneManager.LoadSceneAsync("WinScreen");
+                }
+                else
+                {
+                    SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
+                    SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
+                }
 
                 Light2D l = GetComponentInChildren<Light2D>();
                 l.enabled = true;
