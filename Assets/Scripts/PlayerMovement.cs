@@ -93,6 +93,7 @@ public class PlayerMovement : MonoBehaviour
                     sceneToLoad = "Lobby";
                     bm.boss1CanSpawn = false;
                     bm.timePassed = Time.time;
+                    bm.bossesKilled += 1;
                     bm.imageToChange.GetComponent<Image>().sprite = bm.bossAproachingIcon0quarto;
 
                     Health h = GetComponent<Health>();

@@ -236,7 +236,11 @@ MonoBehaviour:
   timePassed: 0
   boss1CanSpawn: 0
   boss1Prefab: {fileID: 310741120468378633, guid: 7b5425751e97c194aa74ac9fda8461b8, type: 3}
+  boss2Prefab: {fileID: 1269675010959082817, guid: 56d2b07d539593d45b7c08ce0fdec2a1, type: 3}
+  boss3Prefab: {fileID: 1205271247170005234, guid: 90fd777a276d3c64a917286363b8f886, type: 3}
   portalPrefab: {fileID: 2139481442504376189, guid: f3d8dc8057578fd4d964fe2cb7a515f2, type: 3}
+  bossesKilled: 0
+  bossPrefabs: []
 --- !u!4 &81201820
 Transform:
   m_ObjectHideFlags: 0

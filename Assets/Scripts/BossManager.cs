@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -24,8 +25,13 @@ public class BossManager : MonoBehaviour
     public float timePassed; // Quanto tempo passou desde o comeco da fase
     public bool boss1CanSpawn = false; // Se o boss pode spawnar
     [SerializeField] private GameObject boss1Prefab; // Prefab do boss
+    [SerializeField] private GameObject boss2Prefab; // Prefab do boss
+    [SerializeField] private GameObject boss3Prefab; // Prefab do boss
 
     [SerializeField] private GameObject portalPrefab;
+
+    public int bossesKilled = 0;
+    public List<GameObject> bossPrefabs;
 
     void Start()
     {
@@ -45,6 +51,8 @@ public class BossManager : MonoBehaviour
         {
             Debug.LogError("MusicManager not found in the scene.");
         }
+
+        bossPrefabs = new List<GameObject>() { boss1Prefab, boss2Prefab, boss3Prefab };
     }
 
     // Update is called once per frame
@@ -65,7 +73,7 @@ public class BossManager : MonoBehaviour
                     Debug.LogError("MusicManager or AudioSource not found in the scene.");
                 }
                 boss1CanSpawn = false;
-                Instantiate(boss1Prefab);
+                Instantiate(bossPrefabs[bossesKilled]);
                 GameObject[] teleports = GameObject.FindGameObjectsWithTag("TeleportZone");
                 foreach (GameObject obj in teleports)
                 {
