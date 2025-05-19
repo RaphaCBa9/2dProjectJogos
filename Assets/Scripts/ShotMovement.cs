@@ -35,22 +35,29 @@ public class ShotMovement : MonoBehaviour
         }
         if (collision.CompareTag("Boss"))
         {
-            try
+            Debug.Log("Hit a boss");
+            // Tenta causar dano em qualquer tipo de boss existente
+            skeletonBossScript boss1 = collision.gameObject.GetComponent<skeletonBossScript>();
+            if (boss1 != null)
             {
-                skeletonBossScript b = collision.gameObject.GetComponent<skeletonBossScript>();
-                b.takeDamage(damage);
-                Destroy(gameObject);
+                boss1.takeDamage(damage);
+                return; // Se o boss1 for encontrado, não tenta o boss2
             }
-            catch (System.Exception ex)
+
+            skeletonBossScript2 boss2 = collision.gameObject.GetComponent<skeletonBossScript2>();
+            if (boss2 != null)
             {
-                Debug.Log("Error while trying to deal damage to the boss: " + ex.Message);
+                boss2.takeDamage(damage);
+                return; // Se o boss2 for encontrado, não tenta o goblin
             }
-            finally
+
+            GoblinBoss goblinBoss = collision.gameObject.GetComponent<GoblinBoss>();
+            if (goblinBoss != null)
             {
-                skeletonBossScript2 b = collision.gameObject.GetComponent<skeletonBossScript2>();
-                b.takeDamage(damage);
-                Destroy(gameObject);
+                goblinBoss.takeDamage(damage);
+                return; // Se o goblinBoss for encontrado, não tenta o boss1 ou boss2
             }
+            Destroy(gameObject);
         }
         
     }
