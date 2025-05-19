@@ -94,6 +94,10 @@ public class PlayerMovement : MonoBehaviour
                     bm.boss1CanSpawn = false;
                     bm.timePassed = Time.time;
                     bm.imageToChange.GetComponent<Image>().sprite = bm.bossAproachingIcon0quarto;
+
+                    Health h = GetComponent<Health>();
+                    h.healthPoints = h.maxHealthPoints;
+                    h.HandleMudarSlider(h.healthPoints);
                 }
 
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
