@@ -73,7 +73,8 @@ public class BossManager : MonoBehaviour
                     Debug.LogError("MusicManager or AudioSource not found in the scene.");
                 }
                 boss1CanSpawn = false;
-                Instantiate(bossPrefabs[bossesKilled]);
+                GameObject boss = Instantiate(bossPrefabs[bossesKilled]);
+                SceneManager.MoveGameObjectToScene(boss, SceneManager.GetSceneAt(1));
                 GameObject[] teleports = GameObject.FindGameObjectsWithTag("TeleportZone");
                 foreach (GameObject obj in teleports)
                 {
@@ -107,7 +108,7 @@ public class BossManager : MonoBehaviour
 
     public void SpawnPortal()
     {
-        GameObject portal = Instantiate(portalPrefab, new Vector2(0f, 0f), Quaternion.identity);
+        GameObject portal = Instantiate(portalPrefab, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
         SceneManager.MoveGameObjectToScene(portal, SceneManager.GetSceneAt(1));
     }
 }
