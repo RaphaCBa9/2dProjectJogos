@@ -40,7 +40,7 @@ public class skeletonBossScript2 : MonoBehaviour
         }
     }
 
-void Update()
+    void Update()
     {
         if (isDead)
         {
@@ -157,5 +157,11 @@ void Update()
         {
             bossCollider.enabled = true;
         }
+    }
+    
+    public void SpawnPortal()
+    {
+        BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
+        bm.SpawnPortal();
     }
 }

@@ -78,15 +78,30 @@ public class PlayerMovement : MonoBehaviour
         {
             if (canUsePortalLobby)
             {
+                string sceneToLoad;
+                BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
+
+                if (SceneManager.GetSceneAt(1).name.Equals("Lobby"))
+                {
+                    sceneToLoad = "inicial";
+                    bm.boss1CanSpawn = true;
+                    bm.timePassed = Time.time;
+                    bm.imageToChange.GetComponent<Image>().sprite = bm.bossAproachingIcon0quarto;
+                }
+                else
+                {
+                    sceneToLoad = "Lobby";
+                    bm.boss1CanSpawn = false;
+                    bm.timePassed = Time.time;
+                    bm.imageToChange.GetComponent<Image>().sprite = bm.bossAproachingIcon0quarto;
+                }
+
                 SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1).name);
-                SceneManager.LoadSceneAsync("inicial", LoadSceneMode.Additive);
+                SceneManager.LoadSceneAsync(sceneToLoad, LoadSceneMode.Additive);
 
                 Light2D l = GetComponentInChildren<Light2D>();
                 l.enabled = true;
 
-                BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
-                bm.boss1CanSpawn = true;
-                bm.timePassed = Time.time;
                 canUsePortalLobby = false;
             }
             lastInteraction = Time.time;

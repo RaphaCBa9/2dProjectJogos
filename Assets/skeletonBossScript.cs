@@ -125,7 +125,7 @@ public class skeletonBossScript : MonoBehaviour
         {
             animator.SetTrigger("takeDamage");
         }
-    }   
+    }
 
     private int chooseAttack()
     {
@@ -135,4 +135,9 @@ public class skeletonBossScript : MonoBehaviour
         return attackType;
     }
 
+    public void SpawnPortal()
+    {
+        BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
+        bm.SpawnPortal();
+    }
 }

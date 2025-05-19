@@ -172,4 +172,10 @@ public class GoblinBoss : MonoBehaviour
         }
     }
 
+    public void SpawnPortal()
+    {
+        BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
+        bm.SpawnPortal();
+    }
+
 }
