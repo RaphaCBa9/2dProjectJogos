@@ -1187,6 +1187,16 @@ MonoBehaviour:
   - room08
   - room09
   - room10
+  - room11
+  - room12
+  - room13
+  - room14
+  - room15
+  - room16
+  - room17
+  - room18
+  - room19
+  - room20
 --- !u!4 &1372230817
 Transform:
   m_ObjectHideFlags: 0
