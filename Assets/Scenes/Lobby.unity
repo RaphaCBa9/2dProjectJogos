@@ -176,9 +176,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is a magic portal that opens up a lot of paths to glory, but makes
-    the day turn into night. Be careful, there are a lot of enemies that spawn at
-    night, and a very dangerous one at midnight...
+  m_text: ":CAUTION Beyond this threshold lies the Gravenfell Forest \u2014 a place
+    where shadows breathe and the brave are soon forgotten.\n\nTurn back, traveler\u2026
+    or step through and leave your fate to the darkness."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 48c1a74eda4e4f444a4c3a18ca358ed8, type: 2}
   m_sharedMaterial: {fileID: -4546695442134722250, guid: 48c1a74eda4e4f444a4c3a18ca358ed8, type: 2}

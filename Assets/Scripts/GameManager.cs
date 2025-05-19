@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,9 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject playerSkeletonPrefab;
     public GameObject playerPrefabSelected;
 
-    [SerializeField] private AnimatorController playerWizardDeathAnimator;
-    [SerializeField] private AnimatorController playerSkeletonDeathAnimator;
-    public AnimatorController playerDeathAnimatorSelected;
+    [SerializeField] private RuntimeAnimatorController playerWizardDeathAnimator;
+    [SerializeField] private RuntimeAnimatorController playerSkeletonDeathAnimator;
+    public RuntimeAnimatorController playerDeathAnimatorSelected;
 
     void Awake()
     {
