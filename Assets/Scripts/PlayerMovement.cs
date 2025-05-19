@@ -81,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
                 string sceneToLoad;
                 BossManager bm = GameObject.FindGameObjectWithTag("BossManager").GetComponent<BossManager>();
 
+                AudioSource musicmanagerAudioSource = GameObject.FindGameObjectWithTag("musicManager").GetComponent<AudioSource>();
+
                 if (SceneManager.GetSceneAt(1).name.Equals("Lobby"))
                 {
                     sceneToLoad = "inicial";
@@ -90,6 +92,25 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else
                 {
+                    // para a boss music presente no bm
+                    if (bm.bossMusicSource != null)
+                    {
+                        bm.bossMusicSource.Stop();
+                    }
+                    else
+                    {
+                        Debug.LogError("Boss music source not found.");
+                    }
+                    if (musicmanagerAudioSource != null)
+                    {
+                        musicmanagerAudioSource.Play();
+                    }
+                    else
+                    {
+                        Debug.LogError("Music manager audio source not found.");
+                    }
+
+
                     sceneToLoad = "Lobby";
                     bm.boss1CanSpawn = false;
                     bm.timePassed = Time.time;
