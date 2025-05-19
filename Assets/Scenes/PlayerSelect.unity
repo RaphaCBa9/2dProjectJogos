@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -478.97644, y: -96.57999}
+  m_AnchoredPosition: {x: -556.97644, y: -96.57999}
   m_SizeDelta: {x: 150.04712, y: 150.83997}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &330507183
@@ -498,7 +498,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -407, y: -657}
+  m_AnchoredPosition: {x: -491, y: -657}
   m_SizeDelta: {x: 309, y: 90}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &990686107
@@ -629,8 +629,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 71.022705, y: -50.00003}
-  m_SizeDelta: {x: 435.23816, y: 286.133}
+  m_AnchoredPosition: {x: 52, y: -50.00003}
+  m_SizeDelta: {x: 513.1967, y: 287.5504}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1084551309
 MonoBehaviour:
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Knight:
+  m_text: 'Rowen, the Shield:
 
     100 HP
 
@@ -773,7 +773,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -398, y: -277}
+  m_AnchoredPosition: {x: -476, y: -277}
   m_SizeDelta: {x: 309, y: 90}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1111894571
@@ -1443,7 +1443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -503.59885, y: -460.83975}
+  m_AnchoredPosition: {x: -587.5989, y: -460.83975}
   m_SizeDelta: {x: 130.99963, y: 184.3205}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1805846494
@@ -1540,8 +1540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 71.022705, y: -447.9335}
-  m_SizeDelta: {x: 435.23816, y: 286.133}
+  m_AnchoredPosition: {x: 52, y: -447.9335}
+  m_SizeDelta: {x: 500.22, y: 286.133}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1882678029
 MonoBehaviour:
@@ -1563,7 +1563,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Skeleton:
+  m_text: 'Morn, the Reborn:
 
     50 HP
 
