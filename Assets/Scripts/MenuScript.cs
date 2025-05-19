@@ -16,6 +16,11 @@ public class MenuScript : MonoBehaviour
         }
     }
 
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void GoToMenu()
     {
         GameObject gm = GameObject.FindGameObjectWithTag("GameManager");

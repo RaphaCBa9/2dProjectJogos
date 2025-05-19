@@ -24,6 +24,13 @@ public class skeletonBossScript2 : MonoBehaviour
 
     private Collider2D bossCollider;
 
+    public AudioClip attack1Sound;
+    public AudioClip attack2Sound;
+    public AudioClip attackSpecialSound;
+    public AudioClip takeDamageSound;
+
+    private AudioSource audioSource;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -37,6 +44,11 @@ public class skeletonBossScript2 : MonoBehaviour
         if (bossCollider == null)
         {
             Debug.LogError("Boss Collider2D not found.");
+        }
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource not found on the boss.");
         }
     }
 
@@ -61,14 +73,17 @@ public class skeletonBossScript2 : MonoBehaviour
                 if (attackType == 0)
                 {
                     animator.SetTrigger("attack1");
+                    audioSource.PlayOneShot(attack1Sound);
                 }
                 else if (attackType == 1)
                 {
                     animator.SetTrigger("attack2");
+                    audioSource.PlayOneShot(attack2Sound);
                 }
                 else if (attackType == 2)
                 {
                     animator.SetTrigger("attackSpecial");
+                    audioSource.PlayOneShot(attackSpecialSound);
                 }
 
                 // Reset attack type after attacking
