@@ -145,6 +145,7 @@ public class skeletonBossScript : MonoBehaviour
         {
             isDead = true;
             animator.SetBool("isDead", true);
+            SpawnPortal();
             Destroy(gameObject, 5.0f); // Destroy the object after 2 seconds
         }
         else

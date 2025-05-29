@@ -11,6 +11,20 @@ public class Health : MonoBehaviour
     public Slider slider;
     public GameObject gameOverPanel;
 
+    public adManager am;
+
+    void Awake()
+    {
+        if (am == null)
+        {
+            am = FindObjectOfType<adManager>();
+            if (am == null)
+            {
+                Debug.LogError("adManager reference not set on Health script and could not be found in the scene.");
+            }
+        }
+    }
+
     private float damageCooldown = 1f;
 
     public bool isKnockbackActive = false;
@@ -49,7 +63,8 @@ public class Health : MonoBehaviour
 
             if (healthPoints <= 0)
             {
-                SceneManager.LoadSceneAsync("GameOver");
+                //SceneManager.LoadSceneAsync("GameOver");
+                am.startPreAd();
             }
 
             HandleMudarSlider(healthPoints);

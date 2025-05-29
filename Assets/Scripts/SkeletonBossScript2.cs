@@ -137,6 +137,7 @@ public class skeletonBossScript2 : MonoBehaviour
         {
             isDead = true;
             animator.SetBool("isDead", true);
+            SpawnPortal();
             Destroy(gameObject, 5.0f);
         }
         else

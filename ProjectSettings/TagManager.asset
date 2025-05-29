@@ -19,6 +19,7 @@ TagManager:
   - Breakable
   - audioinicial
   - musicManager
+  - skipButton
   layers:
   - Default
   - TransparentFX
